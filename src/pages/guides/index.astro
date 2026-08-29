@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const phases = [
+  {
+    title: "Phase 1: Preparation & Strategy",
+    description: "In India, the most crucial early step is understanding which personal law applies and securing proof of assets before things turn hostile.",
+    chapters: [
+      { slug: "which-law-applies", title: "1.1 Which Law Applies to You?", desc: "Navigating the Hindu Marriage Act (HMA), Special Marriage Act (SMA), Indian Divorce Act (Christian), and Muslim Personal Law." },
+      { slug: "securing-stridhan", title: "1.2 Securing Your Stridhan", desc: "What counts as Stridhan (wedding jewelry, gifts, cash), why the husband's family has no right to it, and how to legally retrieve it." },
+      { slug: "gathering-financial-proof", title: "1.3 Gathering Financial Proof", desc: "A checklist for India: securing copies of ITRs, bank statements, property registries, and proof of spouse's income." },
+      { slug: "domestic-violence-fir-498a", title: "1.4 Domestic Violence & FIR 498A", desc: "Understanding legal protections against cruelty, dowry harassment, and the right to reside in the matrimonial home." }
+    ]
+  },
+  {
+    title: "Phase 2: The Legal Mechanics",
+    description: "Unlike the US, where 'no-fault' is standard, India strictly divides divorce into Mutual Consent (peaceful) and Contested (fighting on fault grounds).",
+    chapters: [
+      { slug: "mutual-consent-divorce", title: "2.1 Mutual Consent Divorce", desc: "The step-by-step process, the mandatory 1-year separation requirement, and the 6-month 'cooling-off' period (and how to waive it)." },
+      { slug: "contested-divorce-grounds", title: "2.2 Contested Divorce Grounds", desc: "Explaining the legally required grounds to fight a divorce (Cruelty, Adultery, Desertion, Mental Disorder)." },
+      { slug: "irretrievable-breakdown", title: "2.3 Irretrievable Breakdown", desc: "Explaining why you cannot simply file for a 'no-fault' contested divorce in lower courts, and the Supreme Court's special powers." },
+      { slug: "court-timeline", title: "2.4 The Court Timeline", desc: "Realistic expectations: Mutual consent (3–6 months) vs. Contested (2–5+ years)." }
+    ]
+  },
+  {
+    title: "Phase 3: Financial Uncoupling & Maintenance",
+    description: "India does not split assets 50/50. The focus is on title ownership and securing maintenance (alimony) to prevent destitution.",
+    chapters: [
+      { slug: "property-real-estate", title: "3.1 Property & Real Estate", desc: "Who gets the flat? Explaining how title deeds and EMI contributions determine ownership, not marriage." },
+      { slug: "interim-maintenance", title: "3.2 Interim Maintenance", desc: "How to file for monthly financial support for the wife and children during the long court proceedings." },
+      { slug: "permanent-alimony", title: "3.3 Permanent Alimony", desc: "How Indian courts calculate final alimony based on the husband's status, wife's income, and lifestyle." },
+      { slug: "joint-accounts-investments", title: "3.4 Joint Accounts & Investments", desc: "How to legally separate joint FDs, mutual funds, EPF/PPF accounts, and bank lockers." }
+    ]
+  },
+  {
+    title: "Phase 4: Children & Custody",
+    description: "Indian courts prioritize the 'welfare of the child' over parental rights, and physical custody of young children usually defaults to the mother.",
+    chapters: [
+      { slug: "types-of-custody", title: "4.1 Types of Custody in India", desc: "Physical vs. Legal custody, and why courts are increasingly looking at 'Shared Parenting' plans." },
+      { slug: "mothers-natural-rights", title: "4.2 The Mother's Natural Rights", desc: "The legal presumption under the Hindu Minority & Guardianship Act that custody of children under 5 remains with the mother." },
+      { slug: "child-maintenance", title: "4.3 Child Maintenance", desc: "How courts decide who pays for school fees, medical expenses, and higher education." },
+      { slug: "visitation-rights", title: "4.4 Visitation Rights", desc: "Securing structured weekend, holiday, and festival meeting rights for the non-custodial parent." }
+    ]
+  },
+  {
+    title: "Phase 5: Post-Divorce Administration",
+    description: "After the decree is granted, Indian citizens face specific bureaucratic hurdles to update their legal identity.",
+    chapters: [
+      { slug: "updating-aadhaar-pan", title: "5.1 Updating Aadhaar & PAN", desc: "The exact process and documents required to revert to a maiden name on government IDs." },
+      { slug: "bank-nominee-updates", title: "5.2 Bank & Nominee Updates", desc: "Removing the ex-spouse as a nominee from LIC policies, bank accounts, and provident funds." },
+      { slug: "appeal-window", title: "5.3 The Appeal Window", desc: "Understanding the 90-day waiting period after a contested decree before you can legally remarry." }
+    ]
+  }
+];
+---
+
+<Layout title="Divorce Guides - India">
+  <div class="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    
+    <header class="mb-16 border-b border-gray-200 pb-8">
+      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Navigating Indian Divorce Law</h1>
+      <p class="text-lg text-gray-600 max-w-3xl">
+        Divorce in India is governed by personal religious laws, not state laws. Property belongs to whoever paid for it, and concepts like Stridhan dictate asset separation. Follow this 5-phase guide to understand the mechanics of the Indian legal system.
+      </p>
+    </header>
+
+    <div class="space-y-16">
+      {phases.map((phase) => (
+        <section>
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">{phase.title}</h2>
+            <p class="text-gray-600 mt-2">{phase.description}</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {phase.chapters.map((chapter) => (
+              <a 
+                href={`/guides/${chapter.slug}`} 
+                class="block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 transition duration-200 ease-in-out"
+              >
+                <h3 class="text-lg font-semibold text-blue-700 mb-2 group-hover:text-blue-800">
+                  {chapter.title}
+                </h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  {chapter.desc}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Layout>
