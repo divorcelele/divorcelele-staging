@@ -1,69 +1,32 @@
 ---
 ---
-<header class="bg-[#FAF8F3] border-b border-gray-200 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16 md:h-20">
-      
-      <!-- Logo Image -->
-      <div class="flex-shrink-0 flex items-center">
-        <a href="/">
-          <img src="/divrocelele.svg" alt="DivorceLele" class="h-8 md:h-10 w-auto" />
-        </a>
-      </div>
-      
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        <ul class="flex items-center gap-8 text-sm font-medium text-slate-700">
-          <li><a href="/assistant" class="hover:text-slate-900 transition-colors">Divorce AI</a></li>
-          <li><a href="/guides" class="hover:text-slate-900 transition-colors">Free Guides</a></li>
-          <li><a href="/pricing" class="hover:text-slate-900 transition-colors">Pricing</a></li>
-        </ul>
-        <a href="/account" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors">
-          My Account
-        </a>
-      </nav>
-
-      <!-- Mobile Hamburger Button -->
-      <div class="flex items-center md:hidden">
-        <button type="button" id="mobile-menu-btn" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2" aria-label="Toggle menu">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F3] border-t border-gray-200 absolute w-full z-50 shadow-lg">
-    <ul class="px-4 pt-2 pb-4 space-y-1 sm:px-6">
+<header class="bg-[#FAF8F3] px-4 py-4 md:px-8 border-b border-gray-200">
+  <nav class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    
+    <!-- Logo Image -->
+    <a href="/" class="flex-shrink-0">
+      <img src="/divrocelele.svg" alt="DivorceLele" class="h-10 w-auto" />
+    </a>
+    
+    <!-- Navigation Links -->
+    <ul class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-700">
       <li>
-        <a href="/assistant" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md">Divorce AI</a>
+        <a href="/assistant" class="hover:text-slate-900 transition-colors">Divorce AI</a>
       </li>
       <li>
-        <a href="/guides" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md">Free Guides</a>
+        <a href="/guides" class="hover:text-slate-900 transition-colors">Free Guides</a>
       </li>
       <li>
-        <a href="/pricing" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md">Pricing</a>
-      </li>
-      <li class="pt-4">
-        <a href="/account" class="block w-full text-center px-5 py-3 bg-slate-900 text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
-          My Account
-        </a>
+        <a href="/pricing" class="hover:text-slate-900 transition-colors">Pricing</a>
       </li>
     </ul>
-  </div>
+
+    <!-- My Account Action -->
+    <div class="mt-4 md:mt-0">
+      <a href="/account" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+        My Account
+      </a>
+    </div>
+
+  </nav>
 </header>
-
-<script>
-  // Astro runs this script on the client side to handle the menu toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-</script>
