@@ -1,11 +1,32 @@
 ---
 ---
-<header class="bg-slate-900 text-white p-4 shadow-md">
-  <nav class="max-w-4xl mx-auto flex justify-between items-center">
-    <a href="/" class="text-xl font-bold tracking-tight">DivorceLele</a>
-    <ul class="flex space-x-6">
-      <li><a href="/" class="hover:text-slate-300 transition-colors">Home</a></li>
-      <li><a href="/about" class="hover:text-slate-300 transition-colors">About</a></li>
+<header class="bg-[#FAF8F3] px-4 py-4 md:px-8 border-b border-gray-200">
+  <nav class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    
+    <!-- Logo Image -->
+    <a href="/" class="flex-shrink-0">
+      <img src="/divrocelele.svg" alt="DivorceLele" class="h-10 w-auto" />
+    </a>
+    
+    <!-- Navigation Links -->
+    <ul class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-700">
+      <li>
+        <a href="/assistant" class="hover:text-slate-900 transition-colors">Divorce Assistant</a>
+      </li>
+      <li>
+        <a href="/guides" class="hover:text-slate-900 transition-colors">Guides</a>
+      </li>
+      <li>
+        <a href="/pricing" class="hover:text-slate-900 transition-colors">Pricing</a>
+      </li>
     </ul>
+
+    <!-- My Account Action -->
+    <div class="mt-4 md:mt-0">
+      <a href="/account" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+        My Account
+      </a>
+    </div>
+
   </nav>
 </header>

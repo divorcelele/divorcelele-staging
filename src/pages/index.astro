@@ -2,22 +2,117 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Home | DivorceLele">
-  <section class="py-12">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Welcome to DivorceLele</h1>
-    <p class="text-lg text-slate-600 mb-8">
-      Your new homepage is now successfully structured with Astro components and Tailwind CSS.
+<Layout title="DivorceLele | Smart AI Divorce Assistant">
+  
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 text-center max-w-5xl mx-auto">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-gray-900 mb-6 leading-tight">
+      Your Strategic Advantage <br class="hidden md:block" /> in Family Court.
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-3xl mx-auto font-medium leading-relaxed">
+      A privacy-focused AI assistant trained on thousands of public case hearings. Secure fair support, protect your hard-earned assets, and eliminate hourly retainer anxiety.
     </p>
-    
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="p-6 bg-slate-50 border border-slate-200 rounded-lg">
-        <h2 class="text-xl font-bold mb-2">Fast Performance</h2>
-        <p class="text-slate-600">Zero unnecessary JavaScript shipped to the client by default.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="/divorce-assistant" class="px-8 py-4 bg-gray-900 text-white text-lg font-medium rounded-full hover:bg-black transition-colors shadow-lg">
+        Meet Your AI Assistant
+      </a>
+      <a href="#features" class="px-8 py-4 bg-white text-gray-900 text-lg font-medium rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+        Explore Capabilities
+      </a>
+    </div>
+  </section>
+
+  <!-- Core Features / Capabilities -->
+  <section id="features" class="py-20 bg-[#f5f5f7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          Strategic Tools for Complex Proceedings
+        </h2>
+        <p class="text-lg text-gray-500 font-medium max-w-2xl mx-auto">
+          Your pocket-sized second layer of defense, from initial planning to final settlement. Maximize your advantage without the legal jargon.
+        </p>
       </div>
-      <div class="p-6 bg-slate-50 border border-slate-200 rounded-lg">
-        <h2 class="text-xl font-bold mb-2">Tailwind Ready</h2>
-        <p class="text-slate-600">Utility classes are fully configured and ready to use.</p>
+      
+      <!-- Dynamic Grid: Cards will never be narrower than 320px -->
+      <div class="grid gap-8 md:gap-10 grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
+        
+        <!-- Feature 1: Evidence -->
+        <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col">
+          <div class="w-14 h-14 bg-[#f5f5f7] rounded-2xl flex items-center justify-center mb-6 text-2xl">📱</div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4 tracking-tight">Evidence & Asset Vault</h3>
+          <ul class="space-y-4 text-gray-600 flex-grow">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Tag and organize toxic WhatsApp chats into structured court annexures.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Format digital logs to strictly fulfill Section 63 BSA criteria.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Build itemized Stridhan and asset recovery schedules.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature 2: Disclosures -->
+        <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col">
+          <div class="w-14 h-14 bg-[#f5f5f7] rounded-2xl flex items-center justify-center mb-6 text-2xl">⚖️</div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4 tracking-tight">Statutory Disclosures</h3>
+          <ul class="space-y-4 text-gray-600 flex-grow">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Auto-format complex financial affidavits accurately.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Comply with Supreme Court mandatory templates (Rajnesh v. Neha).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Instantly translate and breakdown opposing counsel legal notices.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature 3: Strategy -->
+        <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col">
+          <div class="w-14 h-14 bg-[#f5f5f7] rounded-2xl flex items-center justify-center mb-6 text-2xl">🎯</div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4 tracking-tight">Trial & Prep Strategy</h3>
+          <ul class="space-y-4 text-gray-600 flex-grow">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Rehearse hostile questions privately with AI Mock Cross-Examinations.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Convert years of complex history into a fact-checked marital timeline.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Structure strategic filings with pinpoint AI accuracy.</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- Downplayed Free Library Section -->
+  <section class="py-20 px-4 text-center max-w-3xl mx-auto">
+    <p class="text-gray-500 mb-4 font-medium">
+      Looking for quick answers? Browse our free guides on mutual consent, child custody, and legal notices.
+    </p>
+    <a href="/divorce-guides" class="text-gray-900 font-semibold hover:text-gray-600 transition-colors flex items-center justify-center gap-1">
+      Open the Free Guide Library
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </section>
+
 </Layout>
