@@ -46,7 +46,7 @@ const phases = [
     title: "Phase 5: Post-Divorce Administration",
     description: "After the decree is granted, Indian citizens face specific bureaucratic hurdles to update their legal identity.",
     chapters: [
-      { slug: "updating-aadhaar-pan", title: "5.1 Updating Aadhaar & PAN", desc: "The exact process and documents required to revert to a maiden name on government IDs." },
+      { slug: "updating-ids-pan", title: "5.1 Updating Government IDs & PAN", desc: "The exact process and documents required to revert to a maiden name on government-issued IDs." },
       { slug: "bank-nominee-updates", title: "5.2 Bank & Nominee Updates", desc: "Removing the ex-spouse as a nominee from LIC policies, bank accounts, and provident funds." },
       { slug: "appeal-window", title: "5.3 The Appeal Window", desc: "Understanding the 90-day waiting period after a contested decree before you can legally remarry." }
     ]
@@ -55,41 +55,60 @@ const phases = [
 ---
 
 <Layout title="Divorce Guides - India">
-  <div class="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    
-    <header class="mb-16 border-b border-gray-200 pb-8">
-      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Navigating Indian Divorce Law</h1>
-      <p class="text-lg text-gray-600 max-w-3xl">
-        Divorce in India is governed by personal religious laws, not state laws. Property belongs to whoever paid for it, and concepts like Stridhan dictate asset separation. Follow this 5-phase guide to understand the mechanics of the Indian legal system.
-      </p>
-    </header>
+  <div class="bg-stone-50 min-h-screen py-16 sm:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="text-center mb-20 max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+          Plan, Protect, Proceed: Your Roadmap to Indian Divorce
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Divorce in India is governed by complex personal laws and distinct asset rules like Stridhan. This step-by-step blueprint demystifies the legal mechanics, helping you plan your strategy, secure your assets, and navigate the process with clarity.
+        </p>
+      </header>
 
-    <div class="space-y-16">
-      {phases.map((phase) => (
-        <section>
-          <div class="mb-6">
-            <h2 class="text-2xl font-bold text-gray-900">{phase.title}</h2>
-            <p class="text-gray-600 mt-2">{phase.description}</p>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {phase.chapters.map((chapter) => (
-              <a 
-                href={`/guides/${chapter.slug}`} 
-                class="block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 transition duration-200 ease-in-out"
-              >
-                <h3 class="text-lg font-semibold text-blue-700 mb-2 group-hover:text-blue-800">
-                  {chapter.title}
-                </h3>
-                <p class="text-sm text-gray-700 leading-relaxed">
-                  {chapter.desc}
-                </p>
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
+      <div class="space-y-20">
+        {phases.map((phase, index) => (
+          <section class="relative">
+            <div class="mb-10 text-center md:text-left">
+              <span class="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 block mb-3">
+                Phase {index + 1}
+              </span>
+              <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                {phase.title.replace(`Phase ${index + 1}: `, '')}
+              </h2>
+              <p class="text-slate-600 text-lg max-w-3xl leading-relaxed">
+                {phase.description}
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {phase.chapters.map((chapter) => {
+                const chapterNumber = chapter.title.split(' ')[0];
+                const chapterTitle = chapter.title.substring(chapter.title.indexOf(' ') + 1);
+
+                return (
+                  <a 
+                    href={`/guides/${chapter.slug}`} 
+                    class="group block p-8 bg-white rounded-2xl border border-slate-200/60 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] hover:border-slate-300 transition-all duration-300 ease-out hover:-translate-y-1"
+                  >
+                    <div class="text-xs font-semibold text-slate-400 mb-3 tracking-wider">
+                      CHAPTER {chapterNumber}
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-600 transition-colors">
+                      {chapterTitle}
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      {chapter.desc}
+                    </p>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+
     </div>
-
   </div>
 </Layout>
