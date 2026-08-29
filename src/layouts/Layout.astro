@@ -14,7 +14,8 @@ const { title = 'DivorceLele' } = Astro.props;
   </head>
   <body class="flex flex-col min-h-screen bg-white text-slate-900">
     <Header />
-    <main class="flex-grow w-full max-w-4xl mx-auto p-4 md:p-8">
+    <!-- Removed max-w-4xl, mx-auto, and padding so sections can span full width -->
+    <main class="flex-grow w-full">
       <slot />
     </main>
     <Footer />

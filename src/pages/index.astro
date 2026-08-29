@@ -35,8 +35,8 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
       
-      <!-- Dynamic Grid: Cards will never be narrower than 320px -->
-      <div class="grid gap-8 md:gap-10 grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
+      <!-- Fixed Grid: 1 col on mobile, 3 cols on large screens -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
         
         <!-- Feature 1: Evidence -->
         <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col">
