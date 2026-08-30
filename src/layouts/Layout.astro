@@ -8,8 +8,16 @@ const { title = 'DivorceLele' } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/divorcelele-icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/divorcelele-favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Open Graph / WhatsApp Preview Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://divorcelele.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Smart AI Divorce Assistant" />
+    <meta property="og:image" content="https://divorcelele.com/divorcelele.png" />
+    
     <title>{title}</title>
   </head>
   <body class="flex flex-col min-h-screen bg-white text-slate-900">
