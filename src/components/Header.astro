@@ -23,12 +23,16 @@
         </a>
       </nav>
 
-      <!-- Mobile Hamburger Button -->
+      <!-- Mobile Menu Toggle Button -->
       <div class="flex items-center md:hidden">
         <button type="button" id="mobile-menu-btn" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2" aria-label="Toggle menu">
-          <!-- Icon changes based on menu state can be handled in JS, but this keeps it simple -->
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <!-- Hamburger Icon -->
+          <svg id="menu-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close (X) Icon -->
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -36,24 +40,20 @@
     </div>
   </div>
 
-  <!-- Blurred Background Overlay -->
-  <div id="mobile-backdrop" class="hidden md:hidden fixed inset-0 top-16 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
-
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F3] border-b border-gray-200 absolute w-full z-50 shadow-xl">
-    <ul class="px-4 pt-2 pb-6 space-y-1 sm:px-6">
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#FAF8F3] flex-col items-center justify-center">
+    <ul class="flex flex-col items-center space-y-8 w-full px-6">
       <li>
-        <a href="/assistant" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md transition-colors">Divorce AI Assistant</a>
-      </li>
-            <li>
-        <a href="/pricing" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md transition-colors">Pricing</a>
+        <a href="/assistant" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Divorce AI</a>
       </li>
       <li>
-        <a href="/guides" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-md transition-colors">Free Guides</a>
+        <a href="/guides" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Free Guides</a>
       </li>
-
-      <li class="pt-4">
-        <a href="/account" class="block w-full text-center px-5 py-3 bg-slate-900 text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+      <li>
+        <a href="/pricing" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Pricing</a>
+      </li>
+      <li class="pt-6 w-full max-w-[200px]">
+        <a href="/account" class="block w-full text-center px-6 py-4 bg-slate-900 text-white text-lg font-semibold rounded-full hover:bg-slate-800 transition-colors shadow-lg">
           My Account
         </a>
       </li>
@@ -62,23 +62,30 @@
 </header>
 
 <script>
-  // Astro runs this script on the client side to handle the menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mobileBackdrop = document.getElementById('mobile-backdrop');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
   
-  function toggleMenu() {
-    mobileMenu.classList.toggle('hidden');
-    mobileBackdrop.classList.toggle('hidden');
-    
-    // Prevents the background page from scrolling when the menu is open
-    document.body.classList.toggle('overflow-hidden');
-  }
-
-  if (mobileBtn && mobileMenu && mobileBackdrop) {
-    mobileBtn.addEventListener('click', toggleMenu);
-    
-    // Allows the user to close the menu by clicking the blurred background
-    mobileBackdrop.addEventListener('click', toggleMenu);
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      // Toggle the menu visibility (using flex instead of block for centering)
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      }
+      
+      // Swap the icons
+      menuIcon.classList.toggle('hidden');
+      menuIcon.classList.toggle('block');
+      closeIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('block');
+      
+      // Lock background scrolling
+      document.body.classList.toggle('overflow-hidden');
+    });
   }
 </script>
