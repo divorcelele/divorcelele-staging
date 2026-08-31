@@ -1,3 +1,5 @@
+export const prerender = false; // 👈 Add this line at the top
+
 import { getAuth } from "../../../lib/auth.server";
 import type { APIContext } from "astro";
 
