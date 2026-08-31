@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# Cloudflare / Wrangler build artifacts
+.wrangler/
