@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AuthWidget from '../components/auth/AuthWidget';
+import { getAuth } from '../lib/auth.server';
+
+// Fetch the user session securely on the server
+const auth = getAuth(import.meta.env);
+const sessionData = await auth.api.getSession({
+  headers: Astro.request.headers
+});
+
+const user = sessionData?.user;
+---
+
+<Layout title="Account">
+  <main class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+    {user ? (
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 max-w-sm w-full text-center">
+        <h1 class="text-2xl font-bold mb-2">Welcome Back!</h1>
+        <p class="text-gray-600 mb-6">Signed in as: <br/><strong class="text-slate-900">{user.email}</strong></p>
+        
+        <button id="logout-btn" class="p-3 bg-red-50 text-red-600 rounded-lg font-semibold hover:bg-red-100 transition w-full">
+          Log Out
+        </button>
+        
+        <script>
+          import { createAuthClient } from "better-auth/react";
+          const authClient = createAuthClient();
+          
+          document.getElementById('logout-btn')?.addEventListener('click', async () => {
+            await authClient.signOut();
+            window.location.reload(); // Reloads the page to show the auth widget again
+          });
+        </script>
+      </div>
+    ) : (
+      <AuthWidget returnUrl="/account" client:load />
+    )}
+  </main>
+</Layout>
