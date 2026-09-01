@@ -5,13 +5,11 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  output: 'static', 
+  output: 'server', // 👈 This is mandatory for Better Auth & Middleware routing
   adapter: cloudflare({
     platformProxy: { enabled: true },
   }),
-  trailingSlash: 'never', // 👈 Restored
   build: {
-    format: 'file',       // 👈 Restored
     assets: 'assets'
   },
   integrations: [
