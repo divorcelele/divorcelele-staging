@@ -9,7 +9,9 @@ export default defineConfig({
   adapter: cloudflare({
     platformProxy: { enabled: true },
   }),
+  trailingSlash: 'never', // 👈 Restored
   build: {
+    format: 'file',       // 👈 Restored
     assets: 'assets'
   },
   integrations: [
