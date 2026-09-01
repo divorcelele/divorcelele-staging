@@ -23,7 +23,7 @@ export function getAuth(env: any) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              FromEmailAddress: `Divorcelele <${env.EMAIL_FROM}>`,
+              FromEmailAddress: `Verify OTP <${env.EMAIL_FROM}>`,
               Destination: { ToAddresses: [email] },
               Content: {
                 // Changed text to sound more premium
