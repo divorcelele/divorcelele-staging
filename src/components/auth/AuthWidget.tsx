@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createAuthClient } from "better-auth/react";
 import { emailOTPClient } from "better-auth/client/plugins";
-import { passkeyClient } from "better-auth/client/plugins/passkey";
+import { passkeyClient } from "@better-auth/passkey/client";
 import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
