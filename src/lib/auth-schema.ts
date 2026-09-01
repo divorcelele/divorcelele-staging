@@ -7,6 +7,12 @@ export const auth = betterAuth({
     provider: "sqlite",
     url: ":memory:" // Dummy database string just for schema generation
   },
+  
+  // Must mirror your server config for accurate database schema generation
+  emailAndPassword: {
+    enabled: true
+  },
+  
   plugins: [
     passkey(),
     emailOTP({

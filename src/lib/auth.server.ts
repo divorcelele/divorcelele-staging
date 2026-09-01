@@ -10,6 +10,12 @@ export function getAuth(env: any) {
     secret: env.BETTER_AUTH_SECRET,
     // Explicitly set baseURL so Better Auth doesn't reject POST requests
     baseURL: env.BASE_URL || "https://divorcelele-staging.pages.dev", 
+    
+    // Required to enable the core email authentication logic for OTPs
+    emailAndPassword: {
+      enabled: true
+    },
+    
     plugins: [
       passkey(), 
       emailOTP({
