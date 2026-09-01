@@ -45,7 +45,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
             className="p-3 border border-gray-300 rounded-lg outline-none focus:border-slate-900"
           />
 
-          <Turnstile siteKey="YOUR_CLOUDFLARE_SITE_KEY" onSuccess={setTurnstileToken} />
+          <Turnstile siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} />
 
           <button onClick={sendOtp} className="p-3 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition">
             Send Login Code
