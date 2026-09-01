@@ -3,107 +3,102 @@ import Layout from '../../layouts/Layout.astro';
 
 const phases = [
   {
-    title: "Phase 1: Preparation & Strategy",
+    title: "Preparation & Strategy",
     description: "In India, the most crucial early step is understanding which personal law applies and securing proof of assets before things turn hostile.",
     chapters: [
-      { slug: "which-law-applies", title: "1.1 Which Law Applies to You?", desc: "Navigating the Hindu Marriage Act (HMA), Special Marriage Act (SMA), Indian Divorce Act (Christian), and Muslim Personal Law." },
-      { slug: "securing-stridhan", title: "1.2 Securing Your Stridhan", desc: "What counts as Stridhan (wedding jewelry, gifts, cash), why the husband's family has no right to it, and how to legally retrieve it." },
-      { slug: "gathering-financial-proof", title: "1.3 Gathering Financial Proof", desc: "A checklist for India: securing copies of ITRs, bank statements, property registries, and proof of spouse's income." },
-      { slug: "domestic-violence-fir-498a", title: "1.4 Domestic Violence & FIR 498A", desc: "Understanding legal protections against cruelty, dowry harassment, and the right to reside in the matrimonial home." }
+      { slug: "which-law-applies", title: "Which Law Applies to You?", desc: "Navigating the Hindu Marriage Act (HMA), Special Marriage Act (SMA), Indian Divorce Act (Christian), and Muslim Personal Law." },
+      { slug: "securing-stridhan", title: "Securing Your Stridhan", desc: "What counts as Stridhan (wedding jewelry, gifts, cash), why the husband's family has no right to it, and how to legally retrieve it." },
+      { slug: "gathering-financial-proof", title: "Gathering Financial Proof", desc: "A checklist for India: securing copies of ITRs, bank statements, property registries, and proof of spouse's income." },
+      { slug: "domestic-violence-fir-498a", title: "Domestic Violence & FIR 498A", desc: "Understanding legal protections against cruelty, dowry harassment, and the right to reside in the matrimonial home." }
     ]
   },
   {
-    title: "Phase 2: The Legal Mechanics",
+    title: "The Legal Mechanics",
     description: "Unlike the US, where 'no-fault' is standard, India strictly divides divorce into Mutual Consent (peaceful) and Contested (fighting on fault grounds).",
     chapters: [
-      { slug: "mutual-consent-divorce", title: "2.1 Mutual Consent Divorce", desc: "The step-by-step process, the mandatory 1-year separation requirement, and the 6-month 'cooling-off' period (and how to waive it)." },
-      { slug: "contested-divorce-grounds", title: "2.2 Contested Divorce Grounds", desc: "Explaining the legally required grounds to fight a divorce (Cruelty, Adultery, Desertion, Mental Disorder)." },
-      { slug: "irretrievable-breakdown", title: "2.3 Irretrievable Breakdown", desc: "Explaining why you cannot simply file for a 'no-fault' contested divorce in lower courts, and the Supreme Court's special powers." },
-      { slug: "court-timeline", title: "2.4 The Court Timeline", desc: "Realistic expectations: Mutual consent (3–6 months) vs. Contested (2–5+ years)." }
+      { slug: "mutual-consent-divorce", title: "Mutual Consent Divorce", desc: "The step-by-step process, the mandatory 1-year separation requirement, and the 6-month 'cooling-off' period (and how to waive it)." },
+      { slug: "contested-divorce-grounds", title: "Contested Divorce Grounds", desc: "Explaining the legally required grounds to fight a divorce (Cruelty, Adultery, Desertion, Mental Disorder)." },
+      { slug: "irretrievable-breakdown", title: "Irretrievable Breakdown", desc: "Explaining why you cannot simply file for a 'no-fault' contested divorce in lower courts, and the Supreme Court's special powers." },
+      { slug: "court-timeline", title: "The Court Timeline", desc: "Realistic expectations: Mutual consent (3–6 months) vs. Contested (2–5+ years)." }
     ]
   },
   {
-    title: "Phase 3: Financial Uncoupling & Maintenance",
+    title: "Financial Uncoupling & Maintenance",
     description: "India does not split assets 50/50. The focus is on title ownership and securing maintenance (alimony) to prevent destitution.",
     chapters: [
-      { slug: "property-real-estate", title: "3.1 Property & Real Estate", desc: "Who gets the flat? Explaining how title deeds and EMI contributions determine ownership, not marriage." },
-      { slug: "interim-maintenance", title: "3.2 Interim Maintenance", desc: "How to file for monthly financial support for the wife and children during the long court proceedings." },
-      { slug: "permanent-alimony", title: "3.3 Permanent Alimony", desc: "How Indian courts calculate final alimony based on the husband's status, wife's income, and lifestyle." },
-      { slug: "joint-accounts-investments", title: "3.4 Joint Accounts & Investments", desc: "How to legally separate joint FDs, mutual funds, EPF/PPF accounts, and bank lockers." }
+      { slug: "property-real-estate", title: "Property & Real Estate", desc: "Who gets the flat? Explaining how title deeds and EMI contributions determine ownership, not marriage." },
+      { slug: "interim-maintenance", title: "Interim Maintenance", desc: "How to file for monthly financial support for the wife and children during the long court proceedings." },
+      { slug: "permanent-alimony", title: "Permanent Alimony", desc: "How Indian courts calculate final alimony based on the husband's status, wife's income, and lifestyle." },
+      { slug: "joint-accounts-investments", title: "Joint Accounts & Investments", desc: "How to legally separate joint FDs, mutual funds, EPF/PPF accounts, and bank lockers." }
     ]
   },
   {
-    title: "Phase 4: Children & Custody",
+    title: "Children & Custody",
     description: "Indian courts prioritize the 'welfare of the child' over parental rights, and physical custody of young children usually defaults to the mother.",
     chapters: [
-      { slug: "types-of-custody", title: "4.1 Types of Custody in India", desc: "Physical vs. Legal custody, and why courts are increasingly looking at 'Shared Parenting' plans." },
-      { slug: "mothers-natural-rights", title: "4.2 The Mother's Natural Rights", desc: "The legal presumption under the Hindu Minority & Guardianship Act that custody of children under 5 remains with the mother." },
-      { slug: "child-maintenance", title: "4.3 Child Maintenance", desc: "How courts decide who pays for school fees, medical expenses, and higher education." },
-      { slug: "visitation-rights", title: "4.4 Visitation Rights", desc: "Securing structured weekend, holiday, and festival meeting rights for the non-custodial parent." }
+      { slug: "types-of-custody", title: "Types of Custody in India", desc: "Physical vs. Legal custody, and why courts are increasingly looking at 'Shared Parenting' plans." },
+      { slug: "mothers-natural-rights", title: "The Mother's Natural Rights", desc: "The legal presumption under the Hindu Minority & Guardianship Act that custody of children under 5 remains with the mother." },
+      { slug: "child-maintenance", title: "Child Maintenance", desc: "How courts decide who pays for school fees, medical expenses, and higher education." },
+      { slug: "visitation-rights", title: "Visitation Rights", desc: "Securing structured weekend, holiday, and festival meeting rights for the non-custodial parent." }
     ]
   },
   {
-    title: "Phase 5: Post-Divorce Administration",
+    title: "Post-Divorce Administration",
     description: "After the decree is granted, Indian citizens face specific bureaucratic hurdles to update their legal identity.",
     chapters: [
-      { slug: "updating-ids-pan", title: "5.1 Updating Government IDs & PAN", desc: "The exact process and documents required to revert to a maiden name on government-issued IDs." },
-      { slug: "bank-nominee-updates", title: "5.2 Bank & Nominee Updates", desc: "Removing the ex-spouse as a nominee from LIC policies, bank accounts, and provident funds." },
-      { slug: "appeal-window", title: "5.3 The Appeal Window", desc: "Understanding the 90-day waiting period after a contested decree before you can legally remarry." }
+      { slug: "updating-ids-pan", title: "Updating Government IDs & PAN", desc: "The exact process and documents required to revert to a maiden name on government-issued IDs." },
+      { slug: "bank-nominee-updates", title: "Bank & Nominee Updates", desc: "Removing the ex-spouse as a nominee from LIC policies, bank accounts, and provident funds." },
+      { slug: "appeal-window", title: "The Appeal Window", desc: "Understanding the 90-day waiting period after a contested decree before you can legally remarry." }
     ]
   }
 ];
 ---
 
 <Layout title="Divorce Guides - India">
-  <div class="bg-stone-50 min-h-screen py-16 sm:py-24">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <header class="text-center mb-20 max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-          Plan, Protect, Proceed: Your Roadmap to Indian Divorce
+  <div class="bg-[#FBF9F5] min-h-screen py-14 sm:py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-8">
+
+      <header class="mb-16 sm:mb-24">
+        <h1 class="font-serif text-[2rem] leading-[1.15] sm:text-4xl lg:text-5xl text-slate-900 mb-6 max-w-2xl">
+          Plan, protect, proceed: your roadmap to divorce in India
         </h1>
-        <p class="text-lg text-slate-600 leading-relaxed">
-          Divorce in India is governed by complex personal laws and distinct asset rules like Stridhan. This step-by-step blueprint demystifies the legal mechanics, helping you plan your strategy, secure your assets, and navigate the process with clarity.
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+          Divorce in India is governed by complex personal laws and distinct asset rules like Stridhan. This guide walks through the legal mechanics in order — strategy, process, money, children, and what comes after — so you can plan with a clear head.
         </p>
       </header>
 
-      <div class="space-y-20">
+      <div>
         {phases.map((phase, index) => (
-          <section class="relative">
-            <div class="mb-10 text-center md:text-left">
-              <span class="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 block mb-3">
-                Phase {index + 1}
+          <section
+            id={`phase-${index + 1}`}
+            class="relative pt-14 sm:pt-20 first:pt-0 border-t border-slate-200 first:border-t-0"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 mb-3">
+              <span class="font-serif text-4xl sm:text-5xl text-slate-900/15 leading-none tabular-nums select-none" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
               </span>
-              <h2 class="text-3xl font-bold text-slate-900 mb-4">
-                {phase.title.replace(`Phase ${index + 1}: `, '')}
+              <h2 class="font-serif text-2xl sm:text-3xl text-slate-900 mt-1 sm:mt-0">
+                {phase.title}
               </h2>
-              <p class="text-slate-600 text-lg max-w-3xl leading-relaxed">
-                {phase.description}
-              </p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {phase.chapters.map((chapter) => {
-                const chapterNumber = chapter.title.split(' ')[0];
-                const chapterTitle = chapter.title.substring(chapter.title.indexOf(' ') + 1);
+            <p class="text-slate-600 leading-relaxed max-w-xl mb-8 sm:mb-10 sm:ml-[calc(3rem+1.5rem)] lg:ml-[calc(3.5rem+1.5rem)]">
+              {phase.description}
+            </p>
 
-                return (
-                  <a 
-                    href={`/guides/${chapter.slug}`} 
-                    class="group block p-8 bg-white rounded-2xl border border-slate-200/60 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] hover:border-slate-300 transition-all duration-300 ease-out hover:-translate-y-1"
-                  >
-                    <div class="text-xs font-semibold text-slate-400 mb-3 tracking-wider">
-                      CHAPTER {chapterNumber}
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-600 transition-colors">
-                      {chapterTitle}
-                    </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                      {chapter.desc}
-                    </p>
-                  </a>
-                );
-              })}
+            <div class="sm:ml-[calc(3rem+1.5rem)] lg:ml-[calc(3.5rem+1.5rem)] divide-y divide-slate-200">
+              {phase.chapters.map((chapter) => (
+                <a
+                  href={`/guides/${chapter.slug}`}
+                  class="group flex flex-col gap-1.5 py-5 pl-5 border-l-2 border-slate-200 hover:border-slate-900 focus-visible:border-slate-900 transition-colors duration-150 focus-visible:outline-none"
+                >
+                  <h3 class="text-[1.0625rem] font-semibold text-slate-900">
+                    {chapter.title}
+                  </h3>
+                  <p class="text-sm text-slate-600 leading-relaxed max-w-lg">
+                    {chapter.desc}
+                  </p>
+                </a>
+              ))}
             </div>
           </section>
         ))}
@@ -112,3 +107,11 @@ const phases = [
     </div>
   </div>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
+
+  .font-serif {
+    font-family: 'Source Serif 4', ui-serif, Georgia, serif;
+  }
+</style>
