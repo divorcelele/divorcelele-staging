@@ -51,7 +51,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       if (error) throw error;
       if (data) window.location.href = returnUrl;
     } catch (err: any) {
-      alert("Invalid or expired access code.");
+      alert("Invalid or expired code.");
       setIsVerifying(false);
     }
   };
@@ -61,10 +61,11 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
     window.location.reload(); 
   };
 
+  // --- LOADING STATE ---
   if (isPending) {
     return (
-      <div className="flex justify-center items-center h-64 w-full max-w-sm mx-auto">
-        <div className="animate-spin h-6 w-6 border-2 border-black border-t-transparent rounded-full"></div>
+      <div className="flex justify-center items-center h-64 w-full max-w-[360px] mx-auto -mt-20">
+        <div className="animate-spin h-6 w-6 border-2 border-slate-900 border-t-transparent rounded-full"></div>
       </div>
     );
   }
@@ -72,14 +73,14 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   // --- LOGGED IN VIEW ---
   if (session) {
     return (
-      <div className="flex flex-col items-center justify-center gap-8 max-w-sm w-full mx-auto p-12 bg-white border border-gray-100 shadow-2xl rounded-sm">
-        <div className="text-center space-y-2">
-          <h1 className="text-2xl font-light tracking-wide text-gray-900">Welcome</h1>
-          <p className="text-xs font-medium tracking-widest text-gray-400 uppercase">{session.user.email}</p>
+      <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-white border border-gray-200 rounded-2xl -mt-20">
+        <div className="text-center space-y-1">
+          <h1 className="text-xl font-semibold text-gray-900">Account</h1>
+          <p className="text-sm text-gray-500">{session.user.email}</p>
         </div>
         
-        <button onClick={handleLogout} className="w-full py-4 text-xs font-bold tracking-widest text-black uppercase border border-black hover:bg-black hover:text-white transition-colors duration-300">
-          Sign Out
+        <button onClick={handleLogout} className="w-full py-2.5 px-4 bg-gray-50 text-gray-900 text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
+          Sign out
         </button>
       </div>
     );
@@ -87,34 +88,41 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
   // --- LOGGED OUT FLOW ---
   return (
-    <div className="flex flex-col gap-10 max-w-sm w-full mx-auto p-12 bg-white shadow-2xl border border-gray-100 rounded-sm">
+    <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-white border border-gray-200 rounded-2xl -mt-20">
       
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-light tracking-wide text-gray-900">
-          {view === 'login' ? 'Access' : 'Verify'}
+        <h2 className="text-xl font-semibold text-gray-900">
+          {view === 'login' ? 'Log in or sign up' : 'Enter code'}
         </h2>
-        <p className="text-[10px] text-gray-400 tracking-widest uppercase">
-          {view === 'login' ? 'Enter your credentials' : 'Confirm your identity'}
-        </p>
+        {view === 'otp' && (
+          <p className="text-sm text-gray-500">
+            We sent a code to <span className="font-medium text-gray-900">{email}</span>
+          </p>
+        )}
       </div>
 
       {view === 'login' && (
-        <div className="flex flex-col gap-8">
-          <input 
-            type="email" 
-            value={email} 
-            onChange={e => setEmail(e.target.value)} 
-            placeholder="EMAIL ADDRESS" 
-            className="w-full pb-3 text-sm text-center font-light tracking-widest border-b border-gray-200 outline-none focus:border-black transition-colors placeholder-gray-300 uppercase"
-          />
+        <div className="flex flex-col gap-5">
+          <div>
+            <label htmlFor="email" className="sr-only">Email address</label>
+            <input 
+              id="email"
+              type="email" 
+              value={email} 
+              onChange={e => setEmail(e.target.value)} 
+              placeholder="name@example.com" 
+              className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-all placeholder-gray-400"
+            />
+          </div>
           
-          <div className="flex justify-center -my-2">
+          {/* Centers the Cloudflare widget cleanly */}
+          <div className="flex justify-center -my-1 overflow-hidden">
             <Turnstile siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} />
           </div>
 
           <button 
             onClick={handleSendOtp} 
-            className="w-full py-4 bg-black text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300"
+            className="w-full py-2.5 px-4 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors"
           >
             Continue
           </button>
@@ -122,38 +130,38 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       )}
 
       {view === 'otp' && (
-        <div className="flex flex-col gap-8">
-          <p className="text-xs text-center text-gray-400 tracking-wider">
-            Code sent to<br/><span className="text-black font-medium mt-1 inline-block">{email}</span>
-          </p>
-          
-          <input 
-            type="text" 
-            value={otp} 
-            onChange={e => setOtp(e.target.value)} 
-            placeholder="000000"
-            disabled={isVerifying}
-            maxLength={6}
-            className="w-full pb-3 text-2xl text-center font-light tracking-[0.75em] border-b border-gray-200 outline-none focus:border-black transition-colors disabled:bg-transparent disabled:text-gray-300 pl-3"
-          />
+        <div className="flex flex-col gap-5">
+          <div>
+            <label htmlFor="otp" className="sr-only">Verification code</label>
+            <input 
+              id="otp"
+              type="text" 
+              value={otp} 
+              onChange={e => setOtp(e.target.value)} 
+              placeholder="000000"
+              disabled={isVerifying}
+              maxLength={6}
+              className="w-full px-3 py-3 text-xl text-center tracking-[0.5em] font-medium border border-gray-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-all disabled:bg-gray-50 disabled:text-gray-400"
+            />
+          </div>
           
           <button 
             onClick={verifyOtp} 
             disabled={isVerifying || otp.length < 6}
-            className="w-full py-4 bg-black text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300 disabled:bg-gray-200 disabled:text-gray-400 flex items-center justify-center min-h-[50px]"
+            className="w-full py-2.5 px-4 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors disabled:bg-gray-300 disabled:text-gray-500 flex items-center justify-center min-h-[40px]"
           >
             {isVerifying ? (
               <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
             ) : (
-              "Authenticate"
+              "Verify"
             )}
           </button>
 
-          <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+          <div className="flex justify-between items-center mt-2">
             <button 
               onClick={() => setView('login')}
               disabled={isVerifying}
-              className="text-[10px] text-gray-400 hover:text-black tracking-widest uppercase transition-colors disabled:opacity-50"
+              className="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors disabled:opacity-50"
             >
               &larr; Back
             </button>
@@ -161,9 +169,9 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
             <button 
               onClick={handleSendOtp} 
               disabled={countdown > 0 || isVerifying}
-              className="text-[10px] font-bold text-gray-400 hover:text-black tracking-widest uppercase transition-colors disabled:opacity-50"
+              className="text-sm text-slate-900 font-medium hover:underline disabled:text-gray-400 disabled:no-underline transition-colors"
             >
-              {countdown > 0 ? `Wait ${countdown}s` : "Resend"}
+              {countdown > 0 ? `Wait ${countdown}s` : "Resend code"}
             </button>
           </div>
         </div>
