@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { withCloudflare } from "better-auth-cloudflare";
 import { emailOTP } from "better-auth/plugins";
-import { passkey } from "@better-auth/passkey";
+import { passkey } from "better-auth/plugins/passkey";
 import { AwsClient } from "aws4fetch";
 
 export function getAuth(env: any) {

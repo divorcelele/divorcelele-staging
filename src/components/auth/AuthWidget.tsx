@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createAuthClient } from "better-auth/react";
 import { emailOTPClient } from "better-auth/client/plugins";
-import { passkeyClient } from "@better-auth/passkey/client";
+import { passkeyClient } from "better-auth/client/plugins/passkey";
 import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
@@ -44,15 +44,15 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
             placeholder="name@example.com" 
             className="p-3 border border-gray-300 rounded-lg outline-none focus:border-slate-900"
           />
-          
+
           <Turnstile siteKey="YOUR_CLOUDFLARE_SITE_KEY" onSuccess={setTurnstileToken} />
-          
+
           <button onClick={sendOtp} className="p-3 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition">
             Send Login Code
           </button>
-          
+
           <div className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest my-1">OR</div>
-          
+
           <button onClick={loginWithPasskey} className="p-3 border border-gray-300 rounded-lg font-semibold text-slate-700 hover:bg-gray-50 transition">
             Sign in with Passkey
           </button>
