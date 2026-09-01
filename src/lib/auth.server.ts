@@ -5,8 +5,8 @@ import { passkey } from "@better-auth/passkey";
 import { AwsClient } from "aws4fetch";
 
 export function getAuth(env: any) {
-  return betterAuth({
-    ...withCloudflare(
+  return betterAuth(
+    withCloudflare(
       { d1Native: env.DB }, 
       {
         secret: env.BETTER_AUTH_SECRET,
@@ -24,22 +24,26 @@ export function getAuth(env: any) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                  FromEmailAddress: `Your Site <${env.EMAIL_FROM}>`,
+                  FromEmailAddress: `Divorcelele <${env.EMAIL_FROM}>`,
                   Destination: { ToAddresses: [email] },
                   Content: {
                     Simple: {
-                      Subject: { Data: `${otp} is your secure login code`, Charset: "UTF-8" },
-                      Body: { Text: { Data: `Your code is: ${otp}`, Charset: "UTF-8" } }
+                      Subject: { Data: `Your Login Code: ${otp}`, Charset: "UTF-8" },
+                      Body: { Text: { Data: `Your secure login code is: ${otp}. It will expire shortly.`, Charset: "UTF-8" } }
                     }
                   }
                 })
               });
 
-              if (!res.ok) throw new Error("Email sending failed");
+              if (!res.ok) {
+                const errorText = await res.text();
+                console.error("SES Email Delivery Failed:", errorText);
+                throw new Error("Email sending failed");
+              }
             }
           })
         ]
       }
     )
-  });
+  );
 }
