@@ -4,7 +4,29 @@ import AuthWidget from '../components/auth/AuthWidget';
 ---
 
 <Layout title="Account">
-  <main class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-    <AuthWidget returnUrl="/account" client:load />
+  <main class="min-h-screen flex flex-col items-center justify-center bg-[#FBF9F5] px-4 py-12">
+
+
+    <div class="w-full max-w-sm">
+      <AuthWidget returnUrl="/account" client:load />
+    </div>
+
+    <div class="mt-10 flex items-center gap-6">
+      <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
+        ← Back to home
+      </a>
+      <a href="/contact" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
+        Need help?
+      </a>
+    </div>
+
   </main>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
+
+  .font-serif {
+    font-family: 'Source Serif 4', ui-serif, Georgia, serif;
+  }
+</style>
