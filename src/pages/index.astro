@@ -22,26 +22,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <section class="px-5 pb-16 sm:pb-24">
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-slate-900 rounded-2xl aspect-video overflow-hidden shadow-xl border border-slate-200 flex items-center justify-center relative group cursor-pointer">
-          <div class="absolute inset-0 bg-slate-800 flex items-center justify-center">
-            <span class="text-slate-500 font-medium">Video Player Placeholder</span>
-          </div>
-          
-          <div class="w-16 h-16 bg-white text-slate-900 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform relative z-10">
-            <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="absolute bottom-6 left-6 right-6 text-white text-center z-10 pointer-events-none">
-            <p class="font-medium drop-shadow-md">See how it works in 2 minutes</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="features" class="py-20 sm:py-28 px-5 border-t border-slate-200">
       <div class="max-w-6xl mx-auto">
-
         <div class="text-center max-w-2xl mx-auto mb-16">
           <h2 class="font-serif text-3xl md:text-4xl text-slate-900 mb-4">
             Strategic tools for complex proceedings
@@ -52,7 +34,6 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5">
-
           <div class="bg-white p-8 md:p-9 rounded-2xl border border-slate-200 flex flex-col">
             <div class="w-11 h-11 bg-slate-50 rounded-xl flex items-center justify-center mb-6">
               <svg class="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
@@ -123,7 +104,45 @@ import Layout from '../layouts/Layout.astro';
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="py-20 sm:py-28 px-5 border-t border-slate-200 bg-slate-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-serif text-3xl md:text-4xl text-slate-900 mb-4">
+            See the assistant in action
+          </h2>
+          <p class="text-lg text-slate-600">
+            Watch how we turn months of chaotic WhatsApp logs and financial documents into court-ready files in under 2 minutes.
+          </p>
+        </div>
+        
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-white ring-1 ring-slate-900/5 group cursor-pointer relative transition-transform hover:-translate-y-1 duration-300">
+          <div class="bg-slate-100 border-b border-slate-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+            <div class="mx-auto flex-1 text-center">
+              <div class="inline-block bg-white rounded-md px-4 py-1 text-[11px] sm:text-xs text-slate-400 border border-slate-200 font-medium tracking-wide">
+                app.divorcelele.com/assistant
+              </div>
+            </div>
+          </div>
+          
+          <div class="aspect-video relative bg-slate-900 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 mix-blend-overlay"></div>
+            
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:bg-white group-hover:text-slate-900 transition-all duration-300 relative z-10">
+              <svg class="w-6 h-6 sm:w-8 sm:h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            
+            <span class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium tracking-wide drop-shadow-md">
+              Click to play walkthrough
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -185,7 +204,45 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <section id="faq" class="py-20 sm:py-28 px-5 border-t border-slate-200">
+    <section class="py-20 sm:py-28 px-5 border-t border-slate-200">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative rounded-2xl bg-slate-900 px-6 py-10 sm:px-12 sm:py-14 overflow-hidden text-center">
+          <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
+          <div class="relative max-w-xl mx-auto">
+            <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug mb-4">
+              Bring the assistant into your case today
+            </h2>
+            <p class="text-slate-300 leading-relaxed mb-8">
+              Organize your evidence, format your disclosures, and rehearse cross-examination — before you ever pay a retainer.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+              <a href="/assistant" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg hover:bg-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                Try the assistant
+              </a>
+              <a href="/pricing" class="text-sm font-medium text-slate-300 hover:text-white underline decoration-slate-600 underline-offset-4 transition-colors">
+                View pricing
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-5 text-center bg-slate-50 border-t border-slate-200">
+      <div class="max-w-xl mx-auto">
+        <p class="text-slate-500 text-sm mb-3">
+          Looking for legal knowledge instead? Browse our free guides on mutual consent, child custody, and legal notices.
+        </p>
+        <a href="/guides" class="inline-flex items-center gap-1.5 text-slate-900 font-semibold text-sm underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
+          Open the free guide library
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="faq" class="py-20 sm:py-28 px-5 border-t border-slate-200 bg-white">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="font-serif text-3xl md:text-4xl text-slate-900 mb-4">
@@ -234,42 +291,6 @@ import Layout from '../layouts/Layout.astro';
           </details>
         </div>
       </div>
-    </section>
-
-    <section class="px-5 pb-20 sm:pb-28">
-      <div class="max-w-4xl mx-auto">
-        <div class="relative rounded-2xl bg-slate-900 px-6 py-10 sm:px-12 sm:py-14 overflow-hidden text-center">
-          <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
-          <div class="relative max-w-xl mx-auto">
-            <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug mb-4">
-              Bring the assistant into your case today
-            </h2>
-            <p class="text-slate-300 leading-relaxed mb-8">
-              Organize your evidence, format your disclosures, and rehearse cross-examination — before you ever pay a retainer.
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-              <a href="/assistant" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg hover:bg-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-                Try the assistant
-              </a>
-              <a href="/pricing" class="text-sm font-medium text-slate-300 hover:text-white underline decoration-slate-600 underline-offset-4 transition-colors">
-                View pricing
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-16 px-5 text-center max-w-xl mx-auto border-t border-slate-200">
-      <p class="text-slate-500 text-sm mb-3">
-        Looking for legal knowledge instead? Browse our free guides on mutual consent, child custody, and legal notices.
-      </p>
-      <a href="/guides" class="inline-flex items-center gap-1.5 text-slate-900 font-semibold text-sm underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
-        Open the free guide library
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </a>
     </section>
 
   </div>
