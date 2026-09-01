@@ -2,12 +2,11 @@ export const prerender = false;
 
 import { getAuth } from "../../../lib/auth.server";
 import type { APIContext } from "astro";
+import { env } from "cloudflare:workers";
 
 export async function ALL(context: APIContext) {
-  const env = context.locals.runtime.env;
-
-  if (!env) {
-    throw new Error("Cloudflare runtime bindings are missing. Ensure your Astro adapter is configured correctly.");
+  if (!env.DB) {
+    throw new Error("Cloudflare DB binding is missing. Ensure your D1 database is bound in your Cloudflare dashboard.");
   }
 
   const auth = getAuth(env);
