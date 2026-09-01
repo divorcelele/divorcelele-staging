@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createAuthClient } from "better-auth/react";
 import { emailOTPClient } from "better-auth/client/plugins";
 import { Turnstile } from '@marsidev/react-turnstile';
@@ -19,6 +19,9 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   
   const [isVerifying, setIsVerifying] = useState(false);
   const [countdown, setCountdown] = useState(0);
+  
+  // Create a reference to control the Turnstile widget manually
+  const turnstileRef = useRef<any>(null);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -29,19 +32,33 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   }, [countdown]);
 
   const handleSendOtp = async () => {
-    if (!turnstileToken) return alert("Please complete the security check.");
+    if (!turnstileToken) return alert("Please wait for the security check to complete.");
     if (!email) return alert("Please enter your email.");
+    
+    // Capture the current token for this request
+    const currentToken = turnstileToken;
+    
+    // Immediately clear state and reset the widget to generate a NEW token for future resends
+    setTurnstileToken('');
+    turnstileRef.current?.reset();
     
     setCountdown(30);
     setView('otp');
+    setOtp(''); // Clear out any old code from the input field
     
-    await authClient.emailOtp.sendVerificationOtp({ 
+    const { error } = await authClient.emailOtp.sendVerificationOtp({ 
       email, 
       type: 'sign-in',
       fetchOptions: {
-        headers: { 'X-Turnstile-Token': turnstileToken }
+        headers: { 'X-Turnstile-Token': currentToken }
       }
     });
+
+    if (error) {
+      alert("Failed to send access code. Please try again.");
+      setView('login');
+      setCountdown(0);
+    }
   };
 
   const verifyOtp = async () => {
@@ -92,7 +109,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       
       <div className="text-center space-y-2">
         <h2 className="text-xl font-semibold text-gray-900">
-          {view === 'login' ? 'Log in or sign up' : 'Enter code'}
+          {view === 'login' ? 'Log in' : 'Enter code'}
         </h2>
         {view === 'otp' && (
           <p className="text-sm text-gray-500">
@@ -102,7 +119,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       </div>
 
       {view === 'login' && (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4">
           <div>
             <label htmlFor="email" className="sr-only">Email address</label>
             <input 
@@ -113,11 +130,6 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
               placeholder="name@example.com" 
               className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-all placeholder-gray-400"
             />
-          </div>
-          
-          {/* Centers the Cloudflare widget cleanly */}
-          <div className="flex justify-center -my-1 overflow-hidden">
-            <Turnstile siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} />
           </div>
 
           <button 
@@ -130,7 +142,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       )}
 
       {view === 'otp' && (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4">
           <div>
             <label htmlFor="otp" className="sr-only">Verification code</label>
             <input 
@@ -159,7 +171,10 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
           <div className="flex justify-between items-center mt-2">
             <button 
-              onClick={() => setView('login')}
+              onClick={() => {
+                setView('login');
+                setOtp('');
+              }}
               disabled={isVerifying}
               className="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors disabled:opacity-50"
             >
@@ -176,6 +191,16 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
           </div>
         </div>
       )}
+
+      {/* Renders globally across both views so Turnstile can quietly reset in the background */}
+      <div className="flex justify-center overflow-hidden">
+        <Turnstile 
+          ref={turnstileRef}
+          siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} 
+          onSuccess={setTurnstileToken} 
+        />
+      </div>
+
     </div>
   );
 }
