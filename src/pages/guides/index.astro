@@ -62,10 +62,32 @@ const phases = [
         <h1 class="font-serif text-[2rem] leading-[1.15] sm:text-4xl lg:text-5xl text-slate-900 mb-6 max-w-2xl">
           Plan, protect, proceed: your roadmap to divorce in India
         </h1>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
           Divorce in India is governed by complex personal laws and distinct asset rules like Stridhan. This guide walks through the legal mechanics in order — strategy, process, money, children, and what comes after — so you can plan with a clear head.
         </p>
       </header>
+
+      <a
+        href="/assistant"
+        class="group relative mb-16 sm:mb-24 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-2xl bg-slate-900 px-6 py-8 sm:px-10 sm:py-10 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900"
+      >
+        <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
+        <div class="relative">
+          <p class="text-slate-400 text-sm font-medium mb-2">Not sure where you stand?</p>
+          <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug max-w-md">
+            Ask the AI divorce assistant your specific question
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-md">
+            Free, confidential, and built on this same guide — get a straight answer in minutes, not a court date.
+          </p>
+        </div>
+        <span class="relative shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg group-hover:bg-slate-100 transition-colors">
+          Talk to the assistant
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-0.5">
+            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </a>
 
       <div>
         {phases.map((phase, index) => (
@@ -89,19 +111,59 @@ const phases = [
               {phase.chapters.map((chapter) => (
                 <a
                   href={`/guides/${chapter.slug}`}
-                  class="group flex flex-col gap-1.5 py-5 pl-5 border-l-2 border-slate-200 hover:border-slate-900 focus-visible:border-slate-900 transition-colors duration-150 focus-visible:outline-none"
+                  class="group flex items-start justify-between gap-4 py-5 pl-5 pr-1 border-l-2 border-slate-200 hover:border-slate-900 focus-visible:border-slate-900 transition-colors duration-150 focus-visible:outline-none"
                 >
-                  <h3 class="text-[1.0625rem] font-semibold text-slate-900">
-                    {chapter.title}
-                  </h3>
-                  <p class="text-sm text-slate-600 leading-relaxed max-w-lg">
-                    {chapter.desc}
-                  </p>
+                  <div class="flex flex-col gap-1.5">
+                    <h3 class="text-[1.0625rem] font-semibold text-slate-900 group-hover:underline decoration-slate-300 underline-offset-4">
+                      {chapter.title}
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed max-w-lg">
+                      {chapter.desc}
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-4 h-4 mt-1 shrink-0 text-slate-300 group-hover:text-slate-900 group-hover:translate-x-0.5 transition-all duration-150"
+                    aria-hidden="true"
+                  >
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                  </svg>
                 </a>
               ))}
             </div>
           </section>
         ))}
+      </div>
+
+      <div class="mt-20 sm:mt-28 border-t border-slate-200 pt-14 sm:pt-20">
+        <div class="relative rounded-2xl bg-slate-900 px-6 py-10 sm:px-12 sm:py-14 overflow-hidden">
+          <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
+          <div class="relative max-w-2xl">
+            <p class="text-slate-400 text-sm font-medium mb-3">Once you know where you stand</p>
+            <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug mb-4">
+              Turn this guide into your actual case file
+            </h2>
+            <p class="text-slate-300 leading-relaxed mb-8 max-w-xl">
+              The assistant organizes your WhatsApp evidence into court-ready annexures, formats mandatory financial affidavits, and lets you rehearse cross-examination privately — before you ever pay a retainer.
+            </p>
+            <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+              <a
+                href="/assistant"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg hover:bg-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Try the assistant
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                  <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="/pricing" class="text-sm font-medium text-slate-300 hover:text-white underline decoration-slate-600 underline-offset-4 transition-colors">
+                View pricing
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
