@@ -1,37 +1,44 @@
 ---
 ---
-<header class="bg-[#FAF8F3] border-b border-gray-200 relative z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50 bg-[#FAF8F3]">
+<header class="bg-[#FBF9F5] border-b border-slate-200 relative z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50 bg-[#FBF9F5]">
     <div class="flex justify-between items-center h-16 md:h-20">
-      
+
       <!-- Logo Image -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/">
+        <a href="/" class="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">
           <img src="/divorcelele.svg" alt="DivorceLele" class="h-9 md:h-11 w-auto" />
         </a>
       </div>
-      
+
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8">
         <ul class="flex items-center gap-8 text-sm font-medium text-slate-700">
-          <li><a href="/assistant" class="hover:text-slate-900 transition-colors">Divorce AI Assistant</a></li>
-          <li><a href="/pricing" class="hover:text-slate-900 transition-colors">Pricing</a></li>
-          <li><a href="/guides" class="hover:text-slate-900 transition-colors">Free Guides</a></li>
+          <li><a href="/assistant" class="hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Divorce AI Assistant</a></li>
+          <li><a href="/pricing" class="hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Pricing</a></li>
+          <li><a href="/guides" class="hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Free Guides</a></li>
         </ul>
-        <a href="/account" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+        <a href="/account" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">
           My Account
         </a>
       </nav>
 
       <!-- Mobile Menu Toggle Button -->
       <div class="flex items-center md:hidden">
-        <button type="button" id="mobile-menu-btn" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2" aria-label="Toggle menu">
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="text-slate-700 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-md p-2"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
           <!-- Hamburger Icon -->
-          <svg id="menu-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg id="menu-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
           <!-- Close (X) Icon -->
-          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -41,19 +48,19 @@
   </div>
 
   <!-- Fullscreen Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#FAF8F3] flex-col items-center justify-center">
+  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-[#FBF9F5] flex-col items-center justify-center">
     <ul class="flex flex-col items-center space-y-8 w-full px-6">
       <li>
-        <a href="/assistant" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Divorce AI</a>
-      </li>
-            <li>
-        <a href="/pricing" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Pricing</a>
+        <a href="/assistant" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Divorce AI Assistant</a>
       </li>
       <li>
-        <a href="/guides" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors">Free Guides</a>
+        <a href="/pricing" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Pricing</a>
+      </li>
+      <li>
+        <a href="/guides" class="text-2xl font-medium text-slate-700 hover:text-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 rounded-sm">Free Guides</a>
       </li>
       <li class="pt-6 w-full max-w-[200px]">
-        <a href="/account" class="block w-full text-center px-6 py-4 bg-slate-900 text-white text-lg font-semibold rounded-full hover:bg-slate-800 transition-colors shadow-lg">
+        <a href="/account" class="block w-full text-center px-6 py-4 bg-slate-900 text-white text-lg font-semibold rounded-lg hover:bg-slate-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">
           My Account
         </a>
       </li>
@@ -66,26 +73,39 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
-  
+
+  function openMenu() {
+    if (!mobileMenu || !mobileBtn) return;
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+    menuIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    mobileBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeMenu() {
+    if (!mobileMenu || !mobileBtn) return;
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    menuIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  }
+
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
-      // Toggle the menu visibility (using flex instead of block for centering)
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('flex');
+      const isOpen = mobileMenu.classList.contains('flex');
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Close on Escape for keyboard users
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('flex')) {
+        closeMenu();
+        mobileBtn.focus();
       }
-      
-      // Swap the icons
-      menuIcon.classList.toggle('hidden');
-      menuIcon.classList.toggle('block');
-      closeIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('block');
-      
-      // Lock background scrolling
-      document.body.classList.toggle('overflow-hidden');
     });
   }
 </script>
