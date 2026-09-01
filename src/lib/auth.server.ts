@@ -5,10 +5,8 @@ import { AwsClient } from "aws4fetch";
 
 export function getAuth(env: any) {
   return betterAuth({
-    // Better Auth natively supports D1, no wrapper needed!
     database: env.DB, 
     secret: env.BETTER_AUTH_SECRET,
-    // Explicitly set baseURL so Better Auth doesn't reject POST requests
     baseURL: env.BASE_URL || "https://divorcelele-staging.pages.dev", 
     
     // Required to enable the core email authentication logic for OTPs
@@ -20,6 +18,8 @@ export function getAuth(env: any) {
       passkey(), 
       emailOTP({
         async sendVerificationOTP({ email, otp }) {
+          console.log(`[DEBUG-3] Better Auth trigger reached! Attempting to send AWS SES email to: ${email}`);
+          
           const aws = new AwsClient({
             accessKeyId: env.AWS_ACCESS_KEY_ID,
             secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
@@ -43,9 +43,11 @@ export function getAuth(env: any) {
 
           if (!res.ok) {
             const errorText = await res.text();
-            console.error("SES Email Delivery Failed:", errorText);
+            console.error("[DEBUG-3] SES Email Delivery Failed:", errorText);
             throw new Error("Email sending failed");
           }
+          
+          console.log("[DEBUG-3] AWS SES email sent successfully!");
         }
       })
     ]
