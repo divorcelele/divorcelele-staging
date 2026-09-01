@@ -192,14 +192,14 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
         </div>
       )}
 
-      {/* Renders globally across both views so Turnstile can quietly reset in the background */}
-      <div className="flex justify-center overflow-hidden">
-        <Turnstile 
-          ref={turnstileRef}
-          siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} 
-          onSuccess={setTurnstileToken} 
-        />
-      </div>
+      {/* Stays mounted to reset in the background, but becomes INVISIBLE on the OTP screen */}
+<div className={view === 'login' ? 'flex justify-center overflow-hidden' : 'hidden'}>
+  <Turnstile 
+    ref={turnstileRef}
+    siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} 
+    onSuccess={setTurnstileToken} 
+  />
+</div>
 
     </div>
   );
