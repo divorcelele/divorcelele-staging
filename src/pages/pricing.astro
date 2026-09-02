@@ -2,157 +2,276 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Pricing - AI Legal Companion">
-  <div class="bg-[#FBF9F5] min-h-screen py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+<Layout title="Pricing | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-20 md:py-32">
+    <div class="max-w-[1200px] mx-auto px-6">
 
       <!-- Header -->
-      <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
-        <p class="text-slate-500 text-sm font-medium mb-4">Built for Indian family court systems</p>
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-[1.1]">
-          Strategic clarity for your divorce proceedings
+      <div class="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+        <div class="text-[13px] text-[#7A2E2E] font-semibold mb-3 tracking-wide uppercase">Built for Indian family courts</div>
+        <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-5 leading-[1.15] tracking-tight">
+          Strategic clarity for your proceedings
         </h1>
-        <p class="text-lg text-slate-600 leading-relaxed">
-          Eliminate hourly retainer anxiety. Automate statutory disclosures, structure electronic WhatsApp evidence, and prepare strategic filings with AI accuracy.
+        <p class="text-[17px] text-[#4A4E58] leading-relaxed">
+          Eliminate hourly retainer anxiety. Automate statutory disclosures, structure electronic evidence, and prepare strategic filings with AI accuracy.
         </p>
       </div>
 
       <!-- Segmented Control Toggle -->
-      <div class="billing-toggle-container flex justify-center mb-14 sm:mb-20">
-        <div class="relative bg-white border border-slate-200 p-1.5 rounded-full inline-flex w-80">
-          <div id="activeSlider" class="absolute top-1.5 left-1.5 bottom-1.5 w-[calc(50%-6px)] bg-slate-900 rounded-full transition-transform duration-300 ease-out z-0"></div>
+      <div class="billing-toggle-container flex justify-center mb-14 md:mb-20">
+        <div class="relative bg-white border border-[#DBD3C1] p-1.5 rounded-full inline-flex w-[340px] shadow-sm">
+          <div id="activeSlider" class="absolute top-1.5 left-1.5 bottom-1.5 w-[calc(50%-6px)] bg-[#21242C] rounded-full transition-transform duration-300 ease-out z-0"></div>
 
-          <button id="tabMonthly" class="relative z-10 w-1/2 py-2.5 text-sm font-semibold text-white transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-full">
+          <button id="tabMonthly" class="relative z-10 w-1/2 py-2.5 text-[14.5px] font-medium text-[#F2EEE5] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] rounded-full">
             Monthly billing
           </button>
-          <button id="tabYearly" class="relative z-10 w-1/2 py-2.5 text-sm font-semibold text-slate-500 transition-colors duration-200 flex items-center justify-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-full">
-            Yearly <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full text-[0.7rem] font-medium">2 mo free</span>
+          <button id="tabYearly" class="relative z-10 w-1/2 py-2.5 text-[14.5px] font-medium text-[#4A4E58] transition-colors duration-200 flex items-center justify-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] rounded-full">
+            Yearly <span class="bg-[#F2EEE5] text-[#7A2E2E] border border-[#DBD3C1] px-2 py-0.5 rounded-full text-[11px] font-bold tracking-wide">2 MO FREE</span>
           </button>
         </div>
       </div>
 
       <!-- Pricing Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 mb-16 sm:mb-20 lg:items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24 items-start">
 
         <!-- Clarity Plan -->
-        <div class="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 flex flex-col">
+        <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
-            <h3 class="font-serif text-2xl text-slate-900 mb-2">Clarity</h3>
-            <p class="text-sm text-slate-500 min-h-[3rem]">Designed for initial assessment, amicable mutual consent, and petition structuring.</p>
+            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Clarity</h3>
+            <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Designed for initial assessment, amicable mutual consent, and petition structuring.</p>
           </div>
-          <div class="flex items-baseline gap-1 mb-6">
-            <span class="text-xl font-medium text-slate-900">₹</span>
-            <span class="price-val font-serif text-4xl text-slate-900 tracking-tight" data-monthly="2,499" data-yearly="23,999">2,499</span>
-            <span class="billing-period text-slate-500 text-sm">/mo</span>
+          <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
+            <span class="text-xl font-medium text-[#21242C]">₹</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="2,499" data-yearly="23,999">2,499</span>
+            <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
-          <ul class="flex-grow divide-y divide-slate-100 mb-8">
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600 first:pt-0">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span class="font-semibold text-slate-900">200 AI strategic actions / month</span>
+          
+          <ul class="flex-grow space-y-4 mb-10">
+            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              200 AI strategic actions / month
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Plain-language notice translator:</strong> instant Hindi & English breakdowns of opposing counsel summons and legal notices.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Notice translator:</strong> Instant Hindi & English breakdowns of opposing counsel summons and legal notices.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Stridhan & dowry inventory vault:</strong> structure itemized jewelry, gifts, and recovery schedules ready for court submission.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Stridhan & dowry vault:</strong> Structure itemized jewelry, gifts, and recovery schedules ready for court submission.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Marital timeline builder:</strong> convert years of complex domestic history into a clear, fact-checked chronology for your advocate.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Marital timeline builder:</strong> Convert years of complex domestic history into a clear, fact-checked chronology.</span>
             </li>
           </ul>
-          <a href="#checkout" class="block w-full py-3 px-4 rounded-lg text-center text-sm font-semibold transition-colors border border-slate-300 bg-white text-slate-900 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">Choose Clarity</a>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#F2EEE5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Clarity</a>
         </div>
 
         <!-- Litigation Pro (Featured) -->
-        <div class="bg-slate-900 border border-slate-900 rounded-2xl p-8 md:p-10 flex flex-col lg:scale-105">
-          <p class="text-slate-400 text-sm font-medium mb-4">Most recommended</p>
+        <div class="bg-white border-2 border-[#7A2E2E] rounded-md p-8 md:p-10 flex flex-col h-full relative shadow-xl lg:scale-105 z-10">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7A2E2E] text-[#F2EEE5] text-[11.5px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
+            Most recommended
+          </div>
           <div class="mb-6">
-            <h3 class="font-serif text-2xl text-white mb-2">Litigation Pro</h3>
-            <p class="text-sm text-slate-300 min-h-[3rem]">Comprehensive toolkit for contested petitions, custody battles, and maintenance hearings.</p>
+            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Litigation Pro</h3>
+            <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Comprehensive toolkit for contested petitions, custody battles, and maintenance hearings.</p>
           </div>
-          <div class="flex items-baseline gap-1 mb-6">
-            <span class="text-xl font-medium text-white">₹</span>
-            <span class="price-val font-serif text-4xl text-white tracking-tight" data-monthly="7,999" data-yearly="79,999">7,999</span>
-            <span class="billing-period text-slate-400 text-sm">/mo</span>
+          <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
+            <span class="text-xl font-medium text-[#21242C]">₹</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="7,999" data-yearly="79,999">7,999</span>
+            <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
-          <ul class="flex-grow divide-y divide-slate-700 mb-8">
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-300 first:pt-0">
-              <svg class="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span class="font-semibold text-white">750 AI strategic actions / month</span>
+          
+          <ul class="flex-grow space-y-4 mb-10">
+            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
+              <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              750 AI strategic actions / month
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-300">
-              <svg class="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-white font-semibold">Rajnesh v. Neha disclosure generator:</strong> auto-format complex financial affidavits to comply with Supreme Court mandatory templates.</span>
+            
+            <li class="text-[13.5px] font-semibold text-[#7A2E2E] uppercase tracking-wide bg-[#F2EEE5] py-2 px-3 rounded-sm my-4 border border-[#DBD3C1]">
+              Everything in Clarity, plus:
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-300">
-              <svg class="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-white font-semibold">WhatsApp & email evidence sorter:</strong> tag, date, and organize toxic chat screenshots into structured court annexures.</span>
+            
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Rajnesh v. Neha disclosures:</strong> Auto-format complex financial affidavits to comply with Supreme Court templates.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-300">
-              <svg class="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-white font-semibold">Live precedent cross-check:</strong> real-time alignment against the latest High Court and Supreme Court family law judgments.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Evidence sorter:</strong> Tag, date, and organize toxic WhatsApp and email chat screenshots into structured annexures.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-300">
-              <svg class="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-white font-semibold">Co-parenting communication shield:</strong> neutralize heated drafts into dispute-proof, court-safe parenting responses.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Precedent cross-check:</strong> Real-time alignment against the latest High Court and Supreme Court family law judgments.</span>
+            </li>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Co-parenting shield:</strong> Neutralize heated drafts into dispute-proof, court-safe parenting responses.</span>
             </li>
           </ul>
-          <a href="#checkout" class="block w-full py-3 px-4 rounded-lg text-center text-sm font-semibold transition-colors bg-white text-slate-900 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Choose Litigation Pro</a>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors bg-[#7A2E2E] text-[#F2EEE5] hover:bg-[#5C2222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm">Choose Litigation Pro</a>
         </div>
 
         <!-- Trial Suite -->
-        <div class="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 flex flex-col">
+        <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
-            <h3 class="font-serif text-2xl text-slate-900 mb-2">Trial Suite</h3>
-            <p class="text-sm text-slate-500 min-h-[3rem]">Unrestricted workspace for intensive cross-examinations, forensic asset division, and high-conflict trials.</p>
+            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Trial Suite</h3>
+            <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Unrestricted workspace for intensive cross-examinations, forensic asset division, and high-conflict trials.</p>
           </div>
-          <div class="flex items-baseline gap-1 mb-6">
-            <span class="text-xl font-medium text-slate-900">₹</span>
-            <span class="price-val font-serif text-4xl text-slate-900 tracking-tight" data-monthly="21,999" data-yearly="219,999">21,999</span>
-            <span class="billing-period text-slate-500 text-sm">/mo</span>
+          <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
+            <span class="text-xl font-medium text-[#21242C]">₹</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="21,999" data-yearly="219,999">21,999</span>
+            <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
-          <ul class="flex-grow divide-y divide-slate-100 mb-8">
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600 first:pt-0">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span class="font-semibold text-slate-900">2,000 AI strategic actions / month</span>
+          
+          <ul class="flex-grow space-y-4 mb-10">
+            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              2,000 AI strategic actions / month
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">AI mock cross-examination:</strong> rehearse tough, hostile questions before you step into the witness box.</span>
+            
+            <li class="text-[13.5px] font-semibold text-[#21242C] uppercase tracking-wide bg-[#EAE4D6] py-2 px-3 rounded-sm my-4 border border-[#DBD3C1]">
+              Everything in Litigation Pro, plus:
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Section 63 BSA electronic packager:</strong> format digital logs to strictly fulfill electronic evidence certificate criteria.</span>
+            
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Mock cross-examination:</strong> Rehearse tough, hostile questions before you step into the witness box.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Contradiction analyzer:</strong> cross-check opposing petitions across maintenance, custody, and domestic violence filings to highlight discrepancies.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Section 63 BSA packager:</strong> Format digital logs to strictly fulfill electronic evidence certificate criteria.</span>
             </li>
-            <li class="flex items-start gap-3 py-3.5 text-sm text-slate-600">
-              <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-slate-900 font-semibold">Multi-property forensic breakdown:</strong> analyze complex joint real estate, business valuations, and ancestral property claims.</span>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Contradiction analyzer:</strong> Cross-check opposing petitions to highlight factual discrepancies.</span>
+            </li>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Multi-property forensic breakdown:</strong> Analyze complex joint real estate, business valuations, and ancestral property claims.</span>
             </li>
           </ul>
-          <a href="#checkout" class="block w-full py-3 px-4 rounded-lg text-center text-sm font-semibold transition-colors border border-slate-300 bg-white text-slate-900 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">Choose Trial Suite</a>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#F2EEE5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Trial Suite</a>
         </div>
 
       </div>
 
       <!-- Long-term Proceedings Context -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div class="bg-white border border-[#DBD3C1] rounded-md p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm mb-24 md:mb-32">
         <div class="max-w-2xl">
-          <h2 class="font-serif text-2xl md:text-3xl text-slate-900 mb-3">Why an annual plan makes strategic sense</h2>
-          <p class="text-slate-600 leading-relaxed">
+          <h2 class="font-serif text-2xl md:text-3xl text-[#21242C] mb-3">Why an annual plan makes strategic sense</h2>
+          <p class="text-[16px] text-[#4A4E58] leading-relaxed">
             Contested matrimonial disputes in Indian family courts can take several years to resolve. An annual plan provides uninterrupted document access, preserves your case history, and saves roughly 20% over paying monthly.
           </p>
         </div>
         <div class="flex-shrink-0 w-full lg:w-auto">
-          <button id="applyAnnualBtn" class="w-full lg:w-auto px-6 py-3 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 whitespace-nowrap">
-            Apply annual plan
+          <button id="applyAnnualBtn" class="w-full lg:w-auto px-7 py-3.5 bg-[#21242C] text-[#F2EEE5] text-[15px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] whitespace-nowrap shadow-sm">
+            Switch to annual billing
           </button>
+        </div>
+      </div>
+
+
+      <!-- FAQ SECTION -->
+      <div class="max-w-4xl mx-auto border-t border-[#DBD3C1] pt-20">
+        <div class="text-center mb-16">
+          <h2 class="font-serif text-[clamp(2rem,4vw,2.5rem)] font-medium text-[#21242C] mb-4">Pricing & Plan FAQs</h2>
+          <p class="text-[17px] text-[#4A4E58]">Everything you need to know about billing, usage, and managing your account.</p>
+        </div>
+
+        <div class="space-y-12">
+          
+          <!-- Category 1 -->
+          <div>
+            <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Plans & Usage</h3>
+            <div class="space-y-3">
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>What counts as an "AI strategic action"?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  An action is consumed anytime you ask the AI to generate a document, translate a notice, cross-examine a statement, or format an affidavit. Basic app navigation, reading your saved files, and uploading evidence do <strong>not</strong> consume actions.
+                </p>
+              </details>
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>Can I switch plans during my case if things escalate?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  Yes. Many users start on the Clarity plan and upgrade to Litigation Pro if mediation fails and the case goes to trial. Upgrades take effect immediately, and you will only be charged a prorated amount for the remainder of your billing cycle.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div>
+            <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Billing & Payments</h3>
+            <div class="space-y-3">
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>Do you accept UPI and Indian credit cards?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  Yes, we process all payments securely through Razorpay. We support UPI (GPay, PhonePe, Paytm), NetBanking for all major Indian banks, and all domestic debit and credit cards.
+                </p>
+              </details>
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>Are there any hidden charges or GST added later?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  No. The price you see on this page is the final price you pay. All applicable taxes, including GST, are already included in the stated subscription price.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div>
+            <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Managing your plan</h3>
+            <div class="space-y-3">
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>How do I cancel my subscription?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  You can cancel your subscription at any time with two clicks from your Account Settings page. There are no cancellation fees, and you will retain access to your current plan features until the end of your current billing cycle.
+                </p>
+              </details>
+              <details class="group bg-white p-6 md:p-7 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
+                  <span>What happens to my court files if I pause or cancel?</span>
+                  <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
+                  If you cancel, your account enters a "read-only" state. You will still be able to log in and download your existing affidavits and structured evidence files for 60 days. You can also generate a single ZIP archive export of all your case data before leaving. After 60 days, data is securely wiped per our privacy policy.
+                </p>
+              </details>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -161,11 +280,8 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
-
-  .font-serif {
-    font-family: 'Source Serif 4', ui-serif, Georgia, serif;
-  }
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
 </style>
 
 <script>
@@ -189,8 +305,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     tabMonthly.addEventListener('click', () => {
-      tabMonthly.classList.replace('text-slate-500', 'text-white');
-      tabYearly.classList.replace('text-white', 'text-slate-500');
+      tabMonthly.classList.replace('text-[#4A4E58]', 'text-[#F2EEE5]');
+      tabYearly.classList.replace('text-[#F2EEE5]', 'text-[#4A4E58]');
       slider.classList.remove('translate-x-full');
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-monthly'));
@@ -199,12 +315,12 @@ import Layout from '../layouts/Layout.astro';
     });
 
     tabYearly.addEventListener('click', () => {
-      tabYearly.classList.replace('text-slate-500', 'text-white');
-      tabMonthly.classList.replace('text-white', 'text-slate-500');
+      tabYearly.classList.replace('text-[#4A4E58]', 'text-[#F2EEE5]');
+      tabMonthly.classList.replace('text-[#F2EEE5]', 'text-[#4A4E58]');
       slider.classList.add('translate-x-full');
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-yearly'));
-        periodVals[index].innerText = '/yr';
+        periodVals[index].innerText = '/mo, billed annually';
       });
     });
 
