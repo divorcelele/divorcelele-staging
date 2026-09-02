@@ -23,6 +23,16 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   // Create a reference to control the Turnstile widget manually
   const turnstileRef = useRef<any>(null);
 
+  // Dispatch event when session state changes to notify the parent Astro page
+  useEffect(() => {
+    if (!isPending) {
+      const event = new CustomEvent('auth-state-changed', {
+        detail: { isLoggedIn: !!session }
+      });
+      window.dispatchEvent(event);
+    }
+  }, [session, isPending]);
+
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (countdown > 0) {
@@ -66,7 +76,11 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
     try {
       const { data, error } = await authClient.signIn.emailOtp({ email, otp });
       if (error) throw error;
-      if (data) window.location.href = returnUrl;
+      if (data) {
+        // Fire custom event to hide links immediately before redirect
+        window.dispatchEvent(new CustomEvent('auth-state-changed', { detail: { isLoggedIn: true } }));
+        window.location.href = returnUrl;
+      }
     } catch (err: any) {
       alert("Invalid or expired code.");
       setIsVerifying(false);
@@ -75,6 +89,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
   const handleLogout = async () => {
     await authClient.signOut();
+    window.dispatchEvent(new CustomEvent('auth-state-changed', { detail: { isLoggedIn: false } }));
     window.location.reload();
   };
 
@@ -82,7 +97,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   if (isPending) {
     return (
       <div className="flex justify-center items-center h-64 w-full max-w-[360px] mx-auto">
-        <div className="animate-spin h-6 w-6 border-2 border-slate-900 border-t-transparent rounded-full"></div>
+        <div className="animate-spin h-6 w-6 border-2 border-[#21242C] border-t-transparent rounded-full"></div>
       </div>
     );
   }
@@ -90,15 +105,15 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
   // --- LOGGED IN VIEW ---
   if (session) {
     return (
-      <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-white border border-slate-200 rounded-2xl">
+      <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-[#FBF9F4] border border-[#DBD3C1] rounded-md shadow-sm font-sans">
         <div className="text-center space-y-1">
-          <h1 className="font-serif text-xl text-slate-900">Account</h1>
-          <p className="text-sm text-slate-500">{session.user.email}</p>
+          <h1 className="font-serif text-[22px] font-medium text-[#21242C]">Account</h1>
+          <p className="text-[14px] text-[#4A4E58]">{session.user.email}</p>
         </div>
 
         <button
           onClick={handleLogout}
-          className="w-full py-2.5 px-4 bg-white text-slate-900 text-sm font-medium border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+          className="w-full py-2.5 px-4 bg-transparent text-[#21242C] text-[14.5px] font-medium border border-[#21242C] rounded-md hover:bg-[#21242C] hover:text-[#F2EEE5] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]"
         >
           Sign out
         </button>
@@ -108,15 +123,15 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
   // --- LOGGED OUT FLOW ---
   return (
-    <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-white border border-slate-200 rounded-2xl">
+    <div className="flex flex-col gap-6 max-w-[360px] w-full mx-auto p-8 bg-[#FBF9F4] border border-[#DBD3C1] rounded-md shadow-sm font-sans">
 
       <div className="text-center space-y-2">
-        <h2 className="font-serif text-xl text-slate-900">
-          {view === 'login' ? 'Log in' : 'Enter code'}
+        <h2 className="font-serif text-[22px] font-medium text-[#21242C]">
+          {view === 'login' ? 'Log in' : 'Enter access code'}
         </h2>
         {view === 'otp' && (
-          <p className="text-sm text-slate-500">
-            We sent a code to <span className="font-medium text-slate-900">{email}</span>
+          <p className="text-[14px] text-[#4A4E58]">
+            Sent to <span className="font-semibold text-[#21242C]">{email}</span>
           </p>
         )}
       </div>
@@ -131,13 +146,13 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="name@example.com"
-              className="w-full px-3 py-2.5 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-all placeholder-slate-400"
+              className="w-full px-4 py-3 text-[14.5px] bg-white border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all placeholder-[#4A4E58]/60 text-[#21242C]"
             />
           </div>
 
           <button
             onClick={handleSendOtp}
-            className="w-full py-2.5 px-4 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+            className="w-full py-3 px-4 bg-[#21242C] text-[#F2EEE5] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
           >
             Continue
           </button>
@@ -157,19 +172,19 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
               placeholder="000000"
               disabled={isVerifying}
               maxLength={6}
-              className="w-full px-3 py-3 text-xl text-center tracking-[0.5em] font-medium border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-all disabled:bg-slate-50 disabled:text-slate-400"
+              className="w-full px-4 py-3.5 text-xl text-center tracking-[0.4em] font-medium bg-white border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all disabled:bg-[#EAE4D6] disabled:text-[#4A4E58] text-[#21242C] placeholder-[#4A4E58]/30"
             />
           </div>
 
           <button
             onClick={verifyOtp}
             disabled={isVerifying || otp.length < 6}
-            className="w-full py-2.5 px-4 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors disabled:bg-slate-200 disabled:text-slate-400 flex items-center justify-center min-h-[40px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+            className="w-full py-3 px-4 bg-[#21242C] text-[#F2EEE5] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors disabled:bg-[#DBD3C1] disabled:text-[#F2EEE5] flex items-center justify-center min-h-[46px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
           >
             {isVerifying ? (
-              <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+              <div className="animate-spin h-5 w-5 border-2 border-[#F2EEE5] border-t-transparent rounded-full"></div>
             ) : (
-              "Verify"
+              "Verify code"
             )}
           </button>
 
@@ -180,7 +195,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
                 setOtp('');
               }}
               disabled={isVerifying}
-              className="text-sm text-slate-500 hover:text-slate-900 font-medium transition-colors disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm"
+              className="text-[13.5px] text-[#4A4E58] hover:text-[#21242C] font-medium transition-colors disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] rounded-sm"
             >
               &larr; Back
             </button>
@@ -188,7 +203,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
             <button
               onClick={handleSendOtp}
               disabled={countdown > 0 || isVerifying}
-              className="text-sm text-slate-900 font-medium hover:underline disabled:text-slate-400 disabled:no-underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm"
+              className="text-[13.5px] text-[#21242C] font-semibold hover:underline disabled:text-[#4A4E58] disabled:no-underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] rounded-sm"
             >
               {countdown > 0 ? `Wait ${countdown}s` : "Resend code"}
             </button>
@@ -197,7 +212,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
       )}
 
       {/* Stays mounted to reset in the background, but becomes INVISIBLE on the OTP screen */}
-      <div className={view === 'login' ? 'flex justify-center overflow-hidden' : 'hidden'}>
+      <div className={view === 'login' ? 'flex justify-center overflow-hidden pt-2 border-t border-[#DBD3C1]/50' : 'hidden'}>
         <Turnstile
           ref={turnstileRef}
           siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY}
