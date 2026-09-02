@@ -54,34 +54,40 @@ const phases = [
 ];
 ---
 
-<Layout title="Divorce Guides - India">
-  <div class="bg-[#FBF9F5] min-h-screen py-14 sm:py-20 lg:py-28">
-    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-8">
+<Layout title="Divorce Guides - India | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-16 sm:py-24 md:py-32">
+    <div class="max-w-[960px] mx-auto px-6">
 
       <header class="mb-16 sm:mb-24">
-        <h1 class="font-serif text-[2rem] leading-[1.15] sm:text-4xl lg:text-5xl text-slate-900 mb-6 max-w-2xl">
+        <div class="text-[13px] text-[#7A2E2E] font-semibold mb-4 tracking-wide uppercase">Free Legal Library</div>
+        <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-6 max-w-3xl leading-[1.15] tracking-tight">
           Plan, protect, proceed: your roadmap to divorce in India
         </h1>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+        <p class="text-[17px] text-[#4A4E58] leading-relaxed max-w-2xl">
           Divorce in India is governed by complex personal laws and distinct asset rules like Stridhan. This guide walks through the legal mechanics in order — strategy, process, money, children, and what comes after — so you can plan with a clear head.
         </p>
       </header>
 
+      <!-- CTA Break -->
       <a
         href="/assistant"
-        class="group relative mb-16 sm:mb-24 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-2xl bg-slate-900 px-6 py-8 sm:px-10 sm:py-10 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900"
+        class="group relative mb-20 sm:mb-28 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-md bg-[#21242C] px-8 py-10 sm:px-12 sm:py-12 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#21242C] shadow-sm"
       >
-        <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
+        <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
         <div class="relative">
-          <p class="text-slate-400 text-sm font-medium mb-2">Not sure where you stand?</p>
-          <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug max-w-md">
+          <p class="text-[13px] text-[#DBD3C1] font-semibold tracking-wide uppercase mb-2">Not sure where you stand?</p>
+          <h2 class="font-serif text-2xl sm:text-3xl text-[#F2EEE5] leading-snug max-w-md">
             Ask the AI divorce assistant your specific question
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-md">
+          <p class="text-[#DBD3C1] text-[15px] mt-3 max-w-md leading-relaxed">
             Free, confidential, and built on this same guide — get a straight answer in minutes, not a court date.
           </p>
         </div>
-        <span class="relative shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg group-hover:bg-slate-100 transition-colors">
+        <span class="relative shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#7A2E2E] text-[#F2EEE5] text-[14.5px] font-medium rounded-md group-hover:bg-[#5C2222] transition-colors shadow-sm">
           Talk to the assistant
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-0.5">
             <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
@@ -89,35 +95,36 @@ const phases = [
         </span>
       </a>
 
+      <!-- Guide Index -->
       <div>
         {phases.map((phase, index) => (
           <section
             id={`phase-${index + 1}`}
-            class="relative pt-14 sm:pt-20 first:pt-0 border-t border-slate-200 first:border-t-0"
+            class="relative pt-16 sm:pt-20 first:pt-0 border-t border-[#DBD3C1] first:border-t-0 mb-16 sm:mb-20"
           >
-            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 mb-3">
-              <span class="font-serif text-4xl sm:text-5xl text-slate-900/15 leading-none tabular-nums select-none" aria-hidden="true">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 mb-4">
+              <span class="font-serif text-5xl md:text-6xl text-[#DBD3C1]/80 leading-none tabular-nums select-none tracking-tighter" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h2 class="font-serif text-2xl sm:text-3xl text-slate-900 mt-1 sm:mt-0">
+              <h2 class="font-serif text-2xl sm:text-[28px] text-[#21242C] mt-2 sm:mt-0 font-medium">
                 {phase.title}
               </h2>
             </div>
-            <p class="text-slate-600 leading-relaxed max-w-xl mb-8 sm:mb-10 sm:ml-[calc(3rem+1.5rem)] lg:ml-[calc(3.5rem+1.5rem)]">
+            <p class="text-[15.5px] text-[#4A4E58] leading-relaxed max-w-2xl mb-10 sm:ml-[calc(4rem+1.5rem)] lg:ml-[calc(4.5rem+1.5rem)]">
               {phase.description}
             </p>
 
-            <div class="sm:ml-[calc(3rem+1.5rem)] lg:ml-[calc(3.5rem+1.5rem)] divide-y divide-slate-200">
+            <div class="sm:ml-[calc(4rem+1.5rem)] lg:ml-[calc(4.5rem+1.5rem)] divide-y divide-[#DBD3C1]/50">
               {phase.chapters.map((chapter) => (
                 <a
                   href={`/guides/${chapter.slug}`}
-                  class="group flex items-start justify-between gap-4 py-5 pl-5 pr-1 border-l-2 border-slate-200 hover:border-slate-900 focus-visible:border-slate-900 transition-colors duration-150 focus-visible:outline-none"
+                  class="group flex items-start justify-between gap-6 py-6 pl-5 pr-2 border-l-[3px] border-[#DBD3C1] hover:border-[#7A2E2E] focus-visible:border-[#7A2E2E] transition-colors duration-200 focus-visible:outline-none"
                 >
                   <div class="flex flex-col gap-1.5">
-                    <h3 class="text-[1.0625rem] font-semibold text-slate-900 group-hover:underline decoration-slate-300 underline-offset-4">
+                    <h3 class="text-[16px] font-semibold text-[#21242C] group-hover:text-[#7A2E2E] transition-colors">
                       {chapter.title}
                     </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed max-w-lg">
+                    <p class="text-[14px] text-[#4A4E58] leading-relaxed max-w-lg mt-1">
                       {chapter.desc}
                     </p>
                   </div>
@@ -125,7 +132,7 @@ const phases = [
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    class="w-4 h-4 mt-1 shrink-0 text-slate-300 group-hover:text-slate-900 group-hover:translate-x-0.5 transition-all duration-150"
+                    class="w-5 h-5 mt-0.5 shrink-0 text-[#DBD3C1] group-hover:text-[#7A2E2E] group-hover:translate-x-1 transition-all duration-200"
                     aria-hidden="true"
                   >
                     <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
@@ -137,28 +144,26 @@ const phases = [
         ))}
       </div>
 
-      <div class="mt-20 sm:mt-28 border-t border-slate-200 pt-14 sm:pt-20">
-        <div class="relative rounded-2xl bg-slate-900 px-6 py-10 sm:px-12 sm:py-14 overflow-hidden">
-          <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, white 1.5px, transparent 0); background-size: 22px 22px;" aria-hidden="true"></div>
+      <!-- Bottom CTA -->
+      <div class="mt-20 sm:mt-28 border-t border-[#DBD3C1] pt-20">
+        <div class="relative rounded-md bg-[#21242C] px-8 py-12 sm:px-14 sm:py-16 overflow-hidden shadow-sm">
+          <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
           <div class="relative max-w-2xl">
-            <p class="text-slate-400 text-sm font-medium mb-3">Once you know where you stand</p>
-            <h2 class="font-serif text-2xl sm:text-3xl text-white leading-snug mb-4">
+            <p class="text-[13px] text-[#DBD3C1] font-semibold tracking-wide uppercase mb-3">Once you know where you stand</p>
+            <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] text-[#F2EEE5] leading-snug mb-5">
               Turn this guide into your actual case file
             </h2>
-            <p class="text-slate-300 leading-relaxed mb-8 max-w-xl">
+            <p class="text-[15.5px] text-[#DBD3C1] leading-relaxed mb-10 max-w-xl">
               The assistant organizes your WhatsApp evidence into court-ready annexures, formats mandatory financial affidavits, and lets you rehearse cross-examination privately — before you ever pay a retainer.
             </p>
-            <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
                 href="/assistant"
-                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-sm font-semibold rounded-lg hover:bg-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7A2E2E] text-[#F2EEE5] text-[15px] font-medium rounded-md hover:bg-[#5C2222] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm"
               >
                 Try the assistant
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                  <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-                </svg>
               </a>
-              <a href="/pricing" class="text-sm font-medium text-slate-300 hover:text-white underline decoration-slate-600 underline-offset-4 transition-colors">
+              <a href="/pricing" class="text-[15px] font-medium text-[#DBD3C1] hover:text-[#F2EEE5] underline decoration-[#4A4E58] hover:decoration-[#DBD3C1] underline-offset-4 transition-colors">
                 View pricing
               </a>
             </div>
@@ -171,9 +176,6 @@ const phases = [
 </Layout>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
-
-  .font-serif {
-    font-family: 'Source Serif 4', ui-serif, Georgia, serif;
-  }
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
 </style>
