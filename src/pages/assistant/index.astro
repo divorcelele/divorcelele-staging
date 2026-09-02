@@ -2,44 +2,50 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Assistant - Coming Soon">
-  <main class="relative min-h-screen flex items-center justify-center bg-[#FBF9F5] px-5 py-20 overflow-hidden">
+<Layout title="Assistant - Coming Soon | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, #0f172a 1.5px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
+  <main class="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-[#F2EEE5] px-6 py-20 font-sans selection:bg-[#7A2E2E]/20">
 
-    <div class="relative max-w-lg w-full text-center">
-      <div class="inline-flex items-center gap-2 mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-slate-900 animate-pulse"></span>
-        <p class="text-slate-500 text-sm font-medium">The assistant is being built</p>
+    <!-- Subtle Technical Grid Background -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 1.5px 1.5px, #21242C 1.5px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
+
+    <div class="relative max-w-lg w-full bg-white border border-[#DBD3C1] rounded-md p-10 md:p-14 shadow-sm text-center">
+      
+      <!-- Status Tag -->
+      <div class="inline-flex items-center gap-2 mb-8 bg-[#FBF9F4] border border-[#DBD3C1] px-3.5 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#7A2E2E] animate-pulse"></span>
+        <p class="text-[#4A4E58] text-[12px] font-semibold uppercase tracking-widest">Building workspace</p>
       </div>
 
-      <h1 class="font-serif text-3xl sm:text-4xl text-slate-900 leading-tight mb-5">
+      <h1 class="font-serif text-[clamp(1.75rem,4vw,2.25rem)] font-medium text-[#21242C] leading-[1.2] mb-5">
         Your strategic advantage in family court is almost ready
       </h1>
 
-      <p class="text-slate-600 leading-relaxed mb-14 max-w-md mx-auto">
+      <p class="text-[15.5px] text-[#4A4E58] leading-relaxed mb-10 max-w-sm mx-auto">
         A privacy-focused AI assistant for organizing evidence, formatting statutory disclosures, and preparing you for filings — without the hourly retainer anxiety. We're finishing it now.
       </p>
 
-      <div class="pt-10 border-t border-slate-200">
-        <p class="text-sm text-slate-500 mb-4">In the meantime</p>
-        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          <a href="/guides" class="text-sm font-medium text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
-            Browse the free guide library
+      <div class="pt-8 border-t border-[#DBD3C1]/60">
+        <p class="text-[13px] text-[#4A4E58] font-medium uppercase tracking-wide mb-5">In the meantime</p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/guides" class="w-full sm:w-auto px-6 py-3 bg-[#21242C] text-[#F2EEE5] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm">
+            Read free legal guides
           </a>
-          <a href="/pricing" class="text-sm font-medium text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 rounded-sm">
-            View pricing
+          <a href="/pricing" class="w-full sm:w-auto px-6 py-3 bg-[#FBF9F4] text-[#21242C] text-[14.5px] font-medium border border-[#DBD3C1] rounded-md hover:bg-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">
+            View pricing plans
           </a>
         </div>
       </div>
+
     </div>
   </main>
 </Layout>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
-
-  .font-serif {
-    font-family: 'Source Serif 4', ui-serif, Georgia, serif;
-  }
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
 </style>

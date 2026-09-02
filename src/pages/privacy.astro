@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = "September 2, 2026";
+---
+
+<Layout title="Privacy Policy | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-20 md:py-32">
+    <div class="max-w-[800px] mx-auto px-6">
+
+      <!-- Header -->
+      <header class="mb-12 border-b border-[#DBD3C1] pb-10">
+        <div class="text-[13px] text-[#7A2E2E] font-semibold mb-4 tracking-wide uppercase">Legal</div>
+        <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-2 leading-[1.15] tracking-tight">
+          Privacy Policy
+        </h1>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-slate max-w-none text-[#4A4E58]">
+        
+        <p class="text-[15.5px] leading-relaxed mb-8">
+          At DivorceLele ("we", "us", "our"), we understand that family court proceedings involve highly sensitive personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our AI legal assistant software (the "Service").
+        </p>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">1. Information We Collect</h2>
+        <p class="text-[15.5px] leading-relaxed mb-4">We collect information that identifies, relates to, or could reasonably be linked to you ("Personal Data"). This includes:</p>
+        <ul class="space-y-2 mb-8 list-disc pl-5 text-[15px]">
+          <li><strong>Account Information:</strong> Name, email address, password, and contact details used to create an account.</li>
+          <li><strong>Case Data & Evidence:</strong> WhatsApp chat exports, financial documents, legal notices, PDFs, and timelines you upload. <em>(See Section 3 for how this is handled).</em></li>
+          <li><strong>Financial Information:</strong> We do not store your credit card or UPI details. All payments are processed securely by our third-party payment gateway (e.g., Razorpay).</li>
+          <li><strong>Automatically Collected Data:</strong> IP addresses, browser types, device information, and operating systems collected via Google Analytics 4 (GA4) and standard server logs.</li>
+        </ul>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">2. How We Use Your Information</h2>
+        <p class="text-[15.5px] leading-relaxed mb-4">We use the collected information for the following purposes:</p>
+        <ul class="space-y-2 mb-8 list-disc pl-5 text-[15px]">
+          <li>To provide, maintain, and improve our AI drafting and evidence-sorting tools.</li>
+          <li>To process transactions and send related information, including invoices and confirmations.</li>
+          <li>To monitor and analyze usage, trends, and activities using tools like Google Analytics to improve the user experience.</li>
+          <li>To detect, prevent, and address technical issues, fraud, or security breaches.</li>
+        </ul>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">3. AI Processing & Case Data Security</h2>
+        <p class="text-[15.5px] leading-relaxed mb-4">
+          The core of our Service involves processing your sensitive Case Data using Large Language Models (LLMs). We adhere to the following strict principles:
+        </p>
+        <div class="bg-[#FBF9F4] border border-[#DBD3C1] p-6 rounded-md mb-8">
+          <ul class="space-y-3 text-[14.5px] text-[#21242C] m-0 list-none p-0">
+            <li class="flex items-start gap-2">
+              <span class="text-[#7A2E2E] mt-0.5">■</span> <strong>No Global Model Training:</strong> Your uploaded evidence and chat logs are NEVER used to train, fine-tune, or improve public AI models (such as OpenAI's ChatGPT or Anthropic's Claude).
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#7A2E2E] mt-0.5">■</span> <strong>Zero-Retention API Agreements:</strong> We utilize enterprise-grade API agreements with our AI providers ensuring that data passed through the models is deleted from their servers immediately after processing.
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">4. Cookies and Tracking Technologies</h2>
+        <p class="text-[15.5px] leading-relaxed mb-4">
+          We use cookies, web beacons, and similar tracking technologies (including Google Analytics 4) to track activity on our Service and store certain information. This helps us understand user behavior, track marketing campaigns, and improve platform stability. You can instruct your browser to refuse all cookies, but doing so may limit your ability to use certain features of the Service.
+        </p>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">5. Data Retention & Deletion</h2>
+        <p class="text-[15.5px] leading-relaxed mb-4">
+          We retain your account information only for as long as necessary to fulfill the purposes outlined in this policy. For your Case Data (evidence, documents, generated affidavits), you maintain full control. 
+        </p>
+        <p class="text-[15.5px] leading-relaxed mb-8">
+          You may trigger an absolute data purge at any time from your account settings. Upon initiation, all files, exports, and AI-generated text associated with your case will be irretrievably wiped from our active databases and cloud buckets. Please review our <a href="/data-request" class="text-[#7A2E2E] hover:underline font-medium">Data Deletion Policy</a> for specific technical details.
+        </p>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">6. Legal Disclosure & Law Enforcement</h2>
+        <p class="text-[15.5px] leading-relaxed mb-8">
+          We may disclose your Personal Data in the good faith belief that such action is necessary to: comply with a legal obligation, valid court order, or subpoena; protect and defend the rights or property of DivorceLele; or prevent/investigate possible wrongdoing in connection with the Service.
+        </p>
+
+        <h2 class="font-serif text-[24px] font-medium text-[#21242C] mt-12 mb-4">7. Contact Us</h2>
+        <p class="text-[15.5px] leading-relaxed mb-8">
+          If you have questions or concerns about this Privacy Policy, your data, or our security practices, please contact our Privacy Officer at <a href="mailto:privacy@divorcelele.in" class="text-[#7A2E2E] hover:underline font-medium">privacy@divorcelele.in</a>.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
+</style>
