@@ -156,6 +156,10 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
           >
             Continue
           </button>
+          
+          <p className="text-[12px] text-[#4A4E58] text-center leading-relaxed mt-1">
+            By continuing, you agree to our <a href="/terms" className="text-[#21242C] underline hover:text-[#7A2E2E]">Terms of Service</a> and <a href="/privacy" className="text-[#21242C] underline hover:text-[#7A2E2E]">Privacy Policy</a>.
+          </p>
 
         </div>
       )}
