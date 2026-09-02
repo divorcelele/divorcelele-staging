@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-[calc(100vh-80px)] selection:bg-[#7A2E2E]/20 py-20 md:py-32">
+    <div class="max-w-[1120px] mx-auto px-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+        
+        <!-- Left Side: Info -->
+        <div>
+          <div class="text-[13px] text-[#7A2E2E] font-semibold mb-4 tracking-wide uppercase">Get in touch</div>
+          <h1 class="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#21242C] mb-6 leading-[1.15] tracking-tight">
+            We are here to help.
+          </h1>
+          <p class="text-[16px] text-[#4A4E58] leading-relaxed mb-10 max-w-md">
+            Whether you need technical support, have questions about our privacy policies, or are a legal professional looking to partner with us, reach out below.
+          </p>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-[14px] font-semibold text-[#21242C] uppercase tracking-wider mb-2">Support</h3>
+              <a href="mailto:support@divorcelele.in" class="text-[15.5px] text-[#7A2E2E] hover:text-[#5C2222] font-medium transition-colors underline decoration-[#DBD3C1] underline-offset-4">support@divorcelele.in</a>
+            </div>
+            
+            <div>
+              <h3 class="text-[14px] font-semibold text-[#21242C] uppercase tracking-wider mb-2">Partnerships & Press</h3>
+              <a href="mailto:legal@divorcelele.in" class="text-[15.5px] text-[#7A2E2E] hover:text-[#5C2222] font-medium transition-colors underline decoration-[#DBD3C1] underline-offset-4">legal@divorcelele.in</a>
+            </div>
+
+            <div>
+              <h3 class="text-[14px] font-semibold text-[#21242C] uppercase tracking-wider mb-2">Operating Hours</h3>
+              <p class="text-[14.5px] text-[#4A4E58]">Monday – Friday<br>9:00 AM – 6:00 PM IST</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="bg-white border border-[#DBD3C1] rounded-md p-8 md:p-10 shadow-sm">
+          <form class="space-y-6" action="#" method="POST">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="first-name" class="block text-[13.5px] font-semibold text-[#21242C] mb-2">First name</label>
+                <input type="text" id="first-name" name="first-name" class="w-full px-4 py-3 text-[14.5px] bg-[#FBF9F4] border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all text-[#21242C]" required>
+              </div>
+              <div>
+                <label htmlFor="last-name" class="block text-[13.5px] font-semibold text-[#21242C] mb-2">Last name</label>
+                <input type="text" id="last-name" name="last-name" class="w-full px-4 py-3 text-[14.5px] bg-[#FBF9F4] border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all text-[#21242C]" required>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="email" class="block text-[13.5px] font-semibold text-[#21242C] mb-2">Email address</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 text-[14.5px] bg-[#FBF9F4] border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all text-[#21242C]" required>
+            </div>
+
+            <div>
+              <label htmlFor="subject" class="block text-[13.5px] font-semibold text-[#21242C] mb-2">Subject</label>
+              <select id="subject" name="subject" class="w-full px-4 py-3 text-[14.5px] bg-[#FBF9F4] border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all text-[#21242C]">
+                <option>Technical Support</option>
+                <option>Billing & Subscriptions</option>
+                <option>Data Deletion Request</option>
+                <option>Legal Partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="message" class="block text-[13.5px] font-semibold text-[#21242C] mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 text-[14.5px] bg-[#FBF9F4] border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all text-[#21242C]" required></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 px-4 bg-[#21242C] text-[#F2EEE5] text-[15px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm">
+              Send message
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
+</style>

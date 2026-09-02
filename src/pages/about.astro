@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-20 md:py-32">
+    <div class="max-w-[800px] mx-auto px-6">
+
+      <!-- Hero -->
+      <header class="mb-16 md:mb-24 text-center">
+        <div class="text-[13px] text-[#7A2E2E] font-semibold mb-4 tracking-wide uppercase">Our Story</div>
+        <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-6 leading-[1.15] tracking-tight">
+          Leveling the playing field in family court
+        </h1>
+        <p class="text-[17px] text-[#4A4E58] leading-relaxed max-w-2xl mx-auto">
+          DivorceLele was built to solve the biggest bottleneck in Indian matrimonial litigation: the translation of emotional chaos into structured, actionable legal strategy.
+        </p>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg prose-slate max-w-none">
+        <div class="bg-white border border-[#DBD3C1] rounded-md p-8 md:p-12 shadow-sm mb-12">
+          <h2 class="font-serif text-[26px] font-medium text-[#21242C] mb-4">The Problem</h2>
+          <p class="text-[15.5px] text-[#4A4E58] leading-relaxed mb-6">
+            When people enter family court, they are often at the lowest point of their lives. They hand their lawyers thousands of disorganized WhatsApp screenshots, unformatted bank statements, and decades of emotionally charged history. 
+          </p>
+          <p class="text-[15.5px] text-[#4A4E58] leading-relaxed mb-0">
+            Lawyers, who bill by the hour, are forced to play the role of paralegal, therapist, and forensic accountant before they can even begin to draft a petition. This costs the client massive amounts of money and delays justice by months.
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#DBD3C1] rounded-md p-8 md:p-12 shadow-sm mb-16">
+          <h2 class="font-serif text-[26px] font-medium text-[#21242C] mb-4">Our Approach</h2>
+          <p class="text-[15.5px] text-[#4A4E58] leading-relaxed mb-6">
+            We built DivorceLele to be the ultimate preparation layer. Our AI does not replace your lawyer; it makes you the most prepared, cost-efficient client your lawyer has ever represented. 
+          </p>
+          <p class="text-[15.5px] text-[#4A4E58] leading-relaxed mb-0">
+            By automatically structuring digital evidence to meet Section 63 BSA criteria, formatting Rajnesh v. Neha affidavits, and simulating cross-examinations, we ensure that when you step into an advocate's office, you are talking about strategy, not sorting through paperwork.
+          </p>
+        </div>
+
+        <!-- Core Values -->
+        <h2 class="font-serif text-3xl font-medium text-[#21242C] mb-8 text-center border-t border-[#DBD3C1] pt-16">Core Principles</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8">
+            <div class="w-10 h-10 rounded border border-[#DBD3C1] bg-white flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v2" /></svg>
+            </div>
+            <h3 class="text-[16px] font-semibold text-[#21242C] mb-2">Absolute Privacy</h3>
+            <p class="text-[14px] text-[#4A4E58] leading-relaxed">Your data is never used to train global AI models. We offer zero-retention policies and one-click data purges.</p>
+          </div>
+          
+          <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8">
+            <div class="w-10 h-10 rounded border border-[#DBD3C1] bg-white flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-[#21242C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </div>
+            <h3 class="text-[16px] font-semibold text-[#21242C] mb-2">Empowering Advocates</h3>
+            <p class="text-[14px] text-[#4A4E58] leading-relaxed">We align with the Indian legal system. Our outputs are designed to be handed directly to practicing lawyers.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
+</style>
