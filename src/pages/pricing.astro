@@ -320,7 +320,8 @@ import Layout from '../layouts/Layout.astro';
       slider.classList.add('translate-x-full');
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-yearly'));
-        periodVals[index].innerText = '/mo, billed annually';
+        // FIX: Changed from '/mo, billed annually' to '/yr'
+        periodVals[index].innerText = '/yr'; 
       });
     });
 

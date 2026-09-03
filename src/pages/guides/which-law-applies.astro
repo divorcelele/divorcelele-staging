@@ -1,0 +1,334 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// In production, pull this from a shared content collection so the index
+// and every guide page read from one source of truth. Inlined here to
+// match the structure of index.astro.
+const phase = {
+  slug: "preparation-strategy",
+  title: "Preparation & Strategy",
+  chapters: [
+    { slug: "which-law-applies", title: "Which Law Applies to You?" },
+    { slug: "securing-stridhan", title: "Securing Your Stridhan" },
+    { slug: "gathering-financial-proof", title: "Gathering Financial Proof" },
+    { slug: "domestic-violence-fir-498a", title: "Domestic Violence & FIR 498A" },
+  ],
+};
+
+const current = "securing-stridhan";
+const currentIndex = phase.chapters.findIndex((c) => c.slug === current);
+const prev = phase.chapters[currentIndex - 1];
+const next = phase.chapters[currentIndex + 1];
+---
+
+<Layout title="Securing Your Stridhan | Smart AI Divorce Assistant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-12 sm:py-24">
+    <div class="max-w-[1120px] mx-auto px-6">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="mb-8 sm:mb-10 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] sm:text-[13.5px] text-[#4A4E58]">
+        <a href="/guides" class="hover:text-[#7A2E2E] transition-colors whitespace-nowrap">Guides</a>
+        <span aria-hidden="true" class="text-[#DBD3C1]">/</span>
+        <a href="/guides#phase-1" class="hover:text-[#7A2E2E] transition-colors whitespace-nowrap">{phase.title}</a>
+        <span aria-hidden="true" class="text-[#DBD3C1]">/</span>
+        <span class="text-[#21242C] font-medium whitespace-nowrap">Securing Your Stridhan</span>
+      </nav>
+
+      <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-16">
+
+        <!-- Main column -->
+        <div class="max-w-[680px]">
+
+          <header class="mb-10">
+            <h1 class="font-serif text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.15] tracking-tight mb-5 sm:mb-6">
+              Securing Your Stridhan
+            </h1>
+            <p class="text-[16px] sm:text-[17px] text-[#4A4E58] leading-relaxed">
+              Stridhan is the one category of marital property Indian law treats as entirely
+              yours — not joint, not the family's, not up for negotiation. Here's what qualifies,
+              why it's legally distinct from dowry, and how to get it back if it's being withheld.
+            </p>
+            
+            <!-- Meta Info (Bordered Pill Design) -->
+            <div class="mt-8 inline-flex flex-wrap items-center gap-2 px-2 py-1 border-b bg-[#FBF9F4] text-[13px] sm:text-[13.5px] text-[#4A4E58]">
+              <span class="font-medium text-[#21242C]">7 min read</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#DBD3C1]" aria-hidden="true"></span>
+              <span>Written and Reviewed by our <a href="/legal-team" class="text-[#7A2E2E] font-medium hover:text-[#5C2222] underline decoration-[#DBD3C1] hover:decoration-[#7A2E2E] transition-colors underline-offset-4">Legal Team</a></span>
+            </div>
+          </header>
+
+          <article class="article-body">
+            <p>
+              Most women going through separation in India have heard the word "stridhan" but
+              couldn't tell you what it legally covers, or that it comes with its own enforcement
+              mechanism separate from the divorce itself. That gap is exactly what in-laws counting
+              on your silence are relying on.
+            </p>
+
+            <h2 id="what-counts">What counts as stridhan</h2>
+            <p>
+              Under Section 14 of the Hindu Succession Act and a long line of Supreme Court
+              rulings, stridhan is any property gifted to the wife before, during, or after her
+              marriage — from either side of the family, or from friends. In practice, that means:
+            </p>
+            <ul>
+              <li>Wedding jewelry and gold, regardless of who purchased it</li>
+              <li>Cash gifts received at the wedding or afterward</li>
+              <li>Clothes, utensils, furniture, and household items gifted to her</li>
+              <li>Property purchased in her name, or gifted to her by either family</li>
+              <li>Gifts received during her pregnancy or at any later occasion</li>
+            </ul>
+            <p>
+              It does not matter whose relatives gave it, and it does not matter whether it was
+              "for the couple" in spirit. If it was given to her, it is hers alone.
+            </p>
+
+            <!-- Inline CTA (Fixed semantic HTML to prevent global CSS breakage) -->
+            <div class="relative mt-12 mb-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-md bg-[#21242C] px-8 py-10 sm:px-10 sm:py-10 overflow-hidden shadow-sm not-prose">
+              <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
+              <div class="relative">
+                <p class="text-[13px] text-[#DBD3C1] font-semibold mb-2" style="margin: 0 0 0.5rem 0;">Not sure what you're owed?</p>
+                <p class="font-serif text-xl sm:text-2xl text-[#F2EEE5] leading-snug max-w-md" style="margin: 0;">
+                  List your stridhan with the assistant and get a return strategy
+                </p>
+              </div>
+              <a href="/assistant" class="group relative shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#7A2E2E] text-[#F2EEE5] text-[14.5px] font-medium rounded-md hover:bg-[#5C2222] transition-colors shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7A2E2E]">
+                Talk to the assistant
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-0.5">
+                  <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+
+            <h2 id="no-claim">Why the husband's family has no claim to it</h2>
+            <p>
+              Stridhan is not marital property in the way a jointly purchased flat is. Courts have
+              repeatedly held that a husband or his family holding stridhan are, at most, trustees
+              of it — they have no independent title, and cannot treat it as household wealth to be
+              divided, sold, or withheld during a dispute. Retaining it after being asked to return
+              it can itself amount to criminal breach of trust under Section 405 of the IPC (now
+              Section 316 of the Bharatiya Nyaya Sanhita), separate from any dowry harassment claim.
+            </p>
+
+            <h2 id="how-to-retrieve">How to legally retrieve it</h2>
+            <p>
+              If your stridhan is still with your husband or in-laws, you have three routes,
+              roughly in order of how fast they move:
+            </p>
+            <ol>
+              <li>
+                <strong>A written demand.</strong> A lawyer's notice asking for an itemized return
+                is often enough on its own — it puts the retention on record and starts a clock
+                that matters later if you do escalate.
+              </li>
+              <li>
+                <strong>A Section 12 application under the Domestic Violence Act, 2005.</strong>
+                Stridhan is explicitly covered as "economic abuse" under this Act, and courts can
+                order its return relatively quickly, often within the same proceeding as any
+                protection order you're seeking.
+              </li>
+              <li>
+                <strong>A criminal complaint for breach of trust.</strong> Reserved for cases where
+                the property has been sold, pawned, or the family is refusing outright — this is
+                slower, but it applies real pressure.
+              </li>
+            </ol>
+
+            <h2 id="documentation">Building your documentation now</h2>
+            <p>
+              Stridhan cases are won or lost on evidence of what existed and where it went. Start
+              this before things turn hostile, if you can:
+            </p>
+            <ul>
+              <li>Photograph jewelry and valuables, ideally with a family member present</li>
+              <li>Keep wedding photos and videos showing items being gifted or worn</li>
+              <li>Save any invoices, jeweler receipts, or insurance valuations</li>
+              <li>Note where items are currently stored — locker, in-laws' home, bank vault</li>
+              <li>Keep records of any bank lockers held jointly or in your husband's name</li>
+            </ul>
+
+            <blockquote>
+              A locker in your husband's name that you cannot access is still discoverable —
+              courts can and do order lockers opened under judicial supervision when stridhan is
+              alleged to be inside.
+            </blockquote>
+
+            <h2 id="sold-or-hidden">If it's already been sold or is being hidden</h2>
+            <p>
+              You're not out of options. Courts can order the monetary value of stridhan returned
+              even if the physical items are gone, valued at current market rates rather than what
+              was originally paid. This is where documentation — photos, receipts, valuations —
+              stops being a formality and becomes the entire case.
+            </p>
+          </article>
+
+          <!-- Prev / Next -->
+          <nav aria-label="Chapter navigation" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 mt-16 border-t border-[#DBD3C1]">
+            {prev ? (
+              <a href={`/guides/${prev.slug}`} class="group flex flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 hover:border-[#7A2E2E] transition-colors">
+                <span class="text-[12.5px] text-[#4A4E58]">Previous Chapter</span>
+                <span class="text-[15px] font-semibold text-[#21242C] group-hover:text-[#7A2E2E] transition-colors">{prev.title}</span>
+              </a>
+            ) : <div />}
+            {next ? (
+              <a href={`/guides/${next.slug}`} class="group flex flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 text-left sm:text-right hover:border-[#7A2E2E] transition-colors">
+                <span class="text-[12.5px] text-[#4A4E58]">Next Chapter</span>
+                <span class="text-[15px] font-semibold text-[#21242C] group-hover:text-[#7A2E2E] transition-colors">{next.title}</span>
+              </a>
+            ) : <div />}
+          </nav>
+
+        </div>
+
+        <!-- Right rail (Table of Contents) -->
+        <aside class="hidden lg:block mt-2">
+          <div class="sticky top-12">
+            <p class="text-[12.5px] font-semibold text-[#4A4E58] mb-4 uppercase tracking-wider">In this page</p>
+            <nav aria-label="Table of contents">
+              <ul class="flex flex-col gap-4 border-l-2 border-[#DBD3C1]/50 pl-4 mb-10 relative" id="toc-container">
+                <!-- Highlight line that moves (optional CSS trick, but we'll use active classes) -->
+                <li>
+                  <a href="#what-counts" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">What counts as stridhan</a>
+                </li>
+                <li>
+                  <a href="#no-claim" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">Why the husband's family has no claim</a>
+                </li>
+                <li>
+                  <a href="#how-to-retrieve" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">How to legally retrieve it</a>
+                </li>
+                <li>
+                  <a href="#documentation" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">Building your documentation now</a>
+                </li>
+                <li>
+                  <a href="#sold-or-hidden" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">If it's already been sold or hidden</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-20 sm:mt-24 border-t border-[#DBD3C1] pt-20">
+        <div class="relative rounded-md bg-[#21242C] px-8 py-12 sm:px-14 sm:py-16 overflow-hidden shadow-sm">
+          <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
+          <div class="relative max-w-2xl">
+            <p class="text-[13px] text-[#DBD3C1] font-semibold mb-3 tracking-wide uppercase">Once you know where you stand</p>
+            <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] text-[#F2EEE5] leading-snug mb-5">
+              Turn this guide into your actual case file
+            </h2>
+            <p class="text-[15.5px] text-[#DBD3C1] leading-relaxed mb-10 max-w-xl">
+              The assistant organizes your WhatsApp evidence into court-ready annexures, formats mandatory financial affidavits, and lets you rehearse cross-examination privately — before you ever pay a retainer.
+            </p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a
+                href="/assistant"
+                class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7A2E2E] text-[#F2EEE5] text-[15px] font-medium rounded-md hover:bg-[#5C2222] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm"
+              >
+                Try the assistant
+              </a>
+              <a href="/pricing" class="text-[15px] font-medium text-[#DBD3C1] hover:text-[#F2EEE5] underline decoration-[#4A4E58] hover:decoration-[#DBD3C1] underline-offset-4 transition-colors">
+                View pricing
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Script to highlight the active Table of Contents item based on scroll position
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove active styles from all links
+          document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('text-[#7A2E2E]', 'font-semibold', '-ml-[17px]', 'pl-[15px]', 'border-l-2', 'border-[#7A2E2E]');
+            link.classList.add('text-[#4A4E58]');
+          });
+          
+          // Add active styles to the currently intersecting section
+          const activeLink = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.remove('text-[#4A4E58]');
+            activeLink.classList.add('text-[#7A2E2E]', 'font-semibold', '-ml-[17px]', 'pl-[15px]', 'border-l-2', 'border-[#7A2E2E]');
+          }
+        }
+      });
+    }, { 
+      // Triggers when the heading is within the top 10% to 50% of the viewport
+      rootMargin: '-10% 0px -50% 0px' 
+    });
+
+    // Observe all article headings with an ID
+    document.querySelectorAll('.article-body h2[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+<style>
+  .font-serif { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Public Sans', sans-serif; }
+
+  /* Smooth scroll for TOC links */
+  html { scroll-behavior: smooth; }
+
+  .article-body {
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: #21242C;
+  }
+  .article-body p { margin-bottom: 1.5em; color: #33363E; }
+  .article-body h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    color: #21242C;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 100px; /* Accounts for fixed headers if any when jumping from TOC */
+  }
+  .article-body ul, .article-body ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.4em;
+    color: #33363E;
+  }
+  .article-body li { margin-bottom: 0.6em; padding-left: 0.2em; }
+  .article-body ul li { list-style: none; position: relative; }
+  .article-body ul li::before {
+    content: "";
+    position: absolute;
+    left: -1.4em;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #7A2E2E;
+  }
+  .article-body ol { counter-reset: item; }
+  .article-body ol li { list-style: none; counter-increment: item; }
+  .article-body ol li::marker { content: none; }
+  .article-body ol li strong { color: #21242C; }
+  .article-body blockquote {
+    margin: 2em 0;
+    padding: 0.2em 0 0.2em 1.4em;
+    border-left: 3px solid #7A2E2E;
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-style: normal;
+    line-height: 1.5;
+    color: #21242C;
+  }
+  .article-body strong { color: #21242C; font-weight: 600; }
+</style>
