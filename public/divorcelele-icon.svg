@@ -1,16 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <style>
-    .favicon-shape {
-      fill: #7A2E2E; /* Your original dark maroon for light themes */
-    }
-    @media (prefers-color-scheme: dark) {
-      .favicon-shape {
-        fill: #FFFFFF; /* Swaps to white in dark mode for contrast */
-      }
-    }
-  </style>
+  <rect width="512" height="512" fill="#FFFFFF" />
+  
   <path
-    class="favicon-shape"
+    fill="#7A2E2E"
     d="M30 270
        C105 258 165 218 216 145
        C256 88 321 42 402 30
