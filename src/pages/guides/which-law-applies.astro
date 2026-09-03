@@ -54,7 +54,7 @@ const next = phase.chapters[currentIndex + 1];
             </p>
             
             <!-- Meta Info (Bordered Pill Design) -->
-            <div class="mt-8 inline-flex flex-wrap items-center gap-2 px-2 py-1 border-b bg-[#FBF9F4] text-[13px] sm:text-[13.5px] text-[#4A4E58]">
+            <div class="mt-8 inline-flex flex-wrap items-center gap-2 px-2 py-1 border-b border-[#DBD3C1] bg-[#FBF9F4] text-[13px] sm:text-[13.5px] text-[#4A4E58]">
               <span class="font-medium text-[#21242C]">7 min read</span>
               <span class="w-1.5 h-1.5 rounded-full bg-[#DBD3C1]" aria-hidden="true"></span>
               <span>Written and Reviewed by our <a href="/legal-team" class="text-[#7A2E2E] font-medium hover:text-[#5C2222] underline decoration-[#DBD3C1] hover:decoration-[#7A2E2E] transition-colors underline-offset-4">Legal Team</a></span>
@@ -87,14 +87,14 @@ const next = phase.chapters[currentIndex + 1];
               "for the couple" in spirit. If it was given to her, it is hers alone.
             </p>
 
-            <!-- Inline CTA (Fixed semantic HTML to prevent global CSS breakage) -->
-            <div class="relative mt-12 mb-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-md bg-[#21242C] px-8 py-10 sm:px-10 sm:py-10 overflow-hidden shadow-sm not-prose">
+            <!-- Inline CTA (Changed <p> to <div> to bypass global article-body styles) -->
+            <div class="relative mt-12 mb-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-md bg-[#21242C] px-8 py-10 sm:px-10 sm:py-10 overflow-hidden shadow-sm">
               <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;" aria-hidden="true"></div>
               <div class="relative">
-                <p class="text-[13px] text-[#DBD3C1] font-semibold mb-2" style="margin: 0 0 0.5rem 0;">Not sure what you're owed?</p>
-                <p class="font-serif text-xl sm:text-2xl text-[#F2EEE5] leading-snug max-w-md" style="margin: 0;">
+                <div class="text-[13px] text-[#DBD3C1] font-semibold mb-2">Not sure what you're owed?</div>
+                <div class="font-serif text-xl sm:text-2xl text-[#F2EEE5] leading-snug max-w-md">
                   List your stridhan with the assistant and get a return strategy
-                </p>
+                </div>
               </div>
               <a href="/assistant" class="group relative shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#7A2E2E] text-[#F2EEE5] text-[14.5px] font-medium rounded-md hover:bg-[#5C2222] transition-colors shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7A2E2E]">
                 Talk to the assistant
@@ -189,22 +189,22 @@ const next = phase.chapters[currentIndex + 1];
           <div class="sticky top-12">
             <p class="text-[12.5px] font-semibold text-[#4A4E58] mb-4 uppercase tracking-wider">In this page</p>
             <nav aria-label="Table of contents">
-              <ul class="flex flex-col gap-4 border-l-2 border-[#DBD3C1]/50 pl-4 mb-10 relative" id="toc-container">
-                <!-- Highlight line that moves (optional CSS trick, but we'll use active classes) -->
+              <!-- Replaced jumping margins with a stable overlapping border technique -->
+              <ul class="flex flex-col border-l-2 border-[#DBD3C1]/50 relative">
                 <li>
-                  <a href="#what-counts" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">What counts as stridhan</a>
+                  <a href="#what-counts" class="toc-link block py-2 pl-4 text-[14px] text-[#4A4E58] border-l-2 border-transparent hover:text-[#21242C] -ml-[2px] transition-colors duration-200">What counts as stridhan</a>
                 </li>
                 <li>
-                  <a href="#no-claim" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">Why the husband's family has no claim</a>
+                  <a href="#no-claim" class="toc-link block py-2 pl-4 text-[14px] text-[#4A4E58] border-l-2 border-transparent hover:text-[#21242C] -ml-[2px] transition-colors duration-200">Why the husband's family has no claim</a>
                 </li>
                 <li>
-                  <a href="#how-to-retrieve" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">How to legally retrieve it</a>
+                  <a href="#how-to-retrieve" class="toc-link block py-2 pl-4 text-[14px] text-[#4A4E58] border-l-2 border-transparent hover:text-[#21242C] -ml-[2px] transition-colors duration-200">How to legally retrieve it</a>
                 </li>
                 <li>
-                  <a href="#documentation" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">Building your documentation now</a>
+                  <a href="#documentation" class="toc-link block py-2 pl-4 text-[14px] text-[#4A4E58] border-l-2 border-transparent hover:text-[#21242C] -ml-[2px] transition-colors duration-200">Building your documentation now</a>
                 </li>
                 <li>
-                  <a href="#sold-or-hidden" class="toc-link block text-[14px] text-[#4A4E58] hover:text-[#7A2E2E] transition-all duration-200">If it's already been sold or hidden</a>
+                  <a href="#sold-or-hidden" class="toc-link block py-2 pl-4 text-[14px] text-[#4A4E58] border-l-2 border-transparent hover:text-[#21242C] -ml-[2px] transition-colors duration-200">If it's already been sold or hidden</a>
                 </li>
               </ul>
             </nav>
@@ -245,31 +245,29 @@ const next = phase.chapters[currentIndex + 1];
 </Layout>
 
 <script>
-  // Script to highlight the active Table of Contents item based on scroll position
   document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Remove active styles from all links
+          // Remove active state from all links
           document.querySelectorAll('.toc-link').forEach(link => {
-            link.classList.remove('text-[#7A2E2E]', 'font-semibold', '-ml-[17px]', 'pl-[15px]', 'border-l-2', 'border-[#7A2E2E]');
-            link.classList.add('text-[#4A4E58]');
+            link.classList.remove('text-[#7A2E2E]', 'font-semibold', 'border-[#7A2E2E]');
+            link.classList.add('text-[#4A4E58]', 'border-transparent');
           });
           
-          // Add active styles to the currently intersecting section
+          // Add active state to the specific intersecting link
           const activeLink = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
           if (activeLink) {
-            activeLink.classList.remove('text-[#4A4E58]');
-            activeLink.classList.add('text-[#7A2E2E]', 'font-semibold', '-ml-[17px]', 'pl-[15px]', 'border-l-2', 'border-[#7A2E2E]');
+            activeLink.classList.remove('text-[#4A4E58]', 'border-transparent');
+            activeLink.classList.add('text-[#7A2E2E]', 'font-semibold', 'border-[#7A2E2E]');
           }
         }
       });
     }, { 
-      // Triggers when the heading is within the top 10% to 50% of the viewport
-      rootMargin: '-10% 0px -50% 0px' 
+      // Adjusted trigger area for smoother scrolling transitions
+      rootMargin: '-15% 0px -60% 0px' 
     });
 
-    // Observe all article headings with an ID
     document.querySelectorAll('.article-body h2[id]').forEach((section) => {
       observer.observe(section);
     });
@@ -280,7 +278,6 @@ const next = phase.chapters[currentIndex + 1];
   .font-serif { font-family: 'Fraunces', serif; }
   .font-sans { font-family: 'Public Sans', sans-serif; }
 
-  /* Smooth scroll for TOC links */
   html { scroll-behavior: smooth; }
 
   .article-body {
@@ -297,7 +294,7 @@ const next = phase.chapters[currentIndex + 1];
     margin-bottom: 0.8em;
     color: #21242C;
     letter-spacing: -0.01em;
-    scroll-margin-top: 100px; /* Accounts for fixed headers if any when jumping from TOC */
+    scroll-margin-top: 100px;
   }
   .article-body ul, .article-body ol {
     margin-bottom: 1.5em;
