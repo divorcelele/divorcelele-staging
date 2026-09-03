@@ -54,7 +54,7 @@ const next = phase.chapters[currentIndex + 1];
             </p>
             
             <!-- Meta Info (Bordered Pill Design) -->
-            <div class="mt-8 inline-flex flex-wrap items-center gap-2 px-2 py-1 border-b border-[#DBD3C1] bg-[#FBF9F4] text-[13px] sm:text-[13.5px] text-[#4A4E58]">
+            <div class="mt-8 inline-flex flex-wrap items-center gap-2 px-2 py-1 border-b border-[#DBD3C1] bg-white text-[13px] sm:text-[13.5px] text-[#4A4E58]">
               <span class="font-medium text-[#21242C]">7 min read</span>
               <span class="w-1.5 h-1.5 rounded-full bg-[#DBD3C1]" aria-hidden="true"></span>
               <span>Written and Reviewed by our <a href="/legal-team" class="text-[#7A2E2E] font-medium hover:text-[#5C2222] underline decoration-[#DBD3C1] hover:decoration-[#7A2E2E] transition-colors underline-offset-4">Legal Team</a></span>
@@ -169,13 +169,13 @@ const next = phase.chapters[currentIndex + 1];
           <!-- Prev / Next -->
           <nav aria-label="Chapter navigation" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 mt-16 border-t border-[#DBD3C1]">
             {prev ? (
-              <a href={`/guides/${prev.slug}`} class="group flex flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 hover:border-[#7A2E2E] transition-colors">
+              <a href={`/guides/${prev.slug}`} class="group flex bg-white flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 hover:border-[#7A2E2E] transition-colors">
                 <span class="text-[12.5px] text-[#4A4E58]">Previous Chapter</span>
                 <span class="text-[15px] font-semibold text-[#21242C] group-hover:text-[#7A2E2E] transition-colors">{prev.title}</span>
               </a>
             ) : <div />}
             {next ? (
-              <a href={`/guides/${next.slug}`} class="group flex flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 text-left sm:text-right hover:border-[#7A2E2E] transition-colors">
+              <a href={`/guides/${next.slug}`} class="group flex bg-white flex-col gap-1.5 rounded-md border border-[#DBD3C1] px-6 py-5 text-left sm:text-right hover:border-[#7A2E2E] transition-colors">
                 <span class="text-[12.5px] text-[#4A4E58]">Next Chapter</span>
                 <span class="text-[15px] font-semibold text-[#21242C] group-hover:text-[#7A2E2E] transition-colors">{next.title}</span>
               </a>
