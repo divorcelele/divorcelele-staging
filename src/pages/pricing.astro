@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="text-center max-w-2xl mx-auto mb-14 md:mb-20">
         <div class="text-[13px] text-[#7A2E2E] font-semibold mb-3 tracking-wide uppercase">Built for Indian family courts</div>
         <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-5 leading-[1.15] tracking-tight">
-          Strategic clarity for your proceedings
+         Plans and Pricing
         </h1>
         <p class="text-[17px] text-[#4A4E58] leading-relaxed">
           Eliminate hourly retainer anxiety. Automate statutory disclosures, structure electronic evidence, and prepare strategic filings with AI accuracy.
@@ -35,6 +35,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24 items-start">
 
+        <!-- Free -->
         <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
             <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Free</h3>
@@ -63,51 +64,11 @@ import Layout from '../layouts/Layout.astro';
           <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#EAE4D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Free</a>
         </div>
 
+        <!-- Trial Suite (Featured) -->
         <div class="bg-white border border-[#7A2E2E] rounded-md p-8 md:p-10 flex flex-col h-full relative shadow-xl lg:scale-105 z-10">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7A2E2E] text-[#EAE4D6] text-[11.5px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
-            Most recommended
+            Most popular
           </div>
-          <div class="mb-6">
-            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Litigation Pro</h3>
-            <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Comprehensive toolkit for contested petitions, custody battles, and maintenance hearings.</p>
-          </div>
-          <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
-            <span class="text-xl font-medium text-[#21242C]">₹</span>
-            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="1,489" data-yearly="14,890">1,489</span>
-            <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
-          </div>
-          
-          <ul class="flex-grow space-y-4 mb-10">
-            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
-              <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              20x more usage than free
-            </li>
-            
-            <li class="text-[13.5px] font-semibold text-[#7A2E2E]">
-              Everything in Free, plus:
-            </li>
-            
-            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-[#21242C] font-semibold">Rajnesh v. Neha disclosures:</strong> Auto-format complex financial affidavits to comply with Supreme Court templates.</span>
-            </li>
-            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-[#21242C] font-semibold">Evidence sorter:</strong> Tag, date, and organize toxic WhatsApp and email chat screenshots into structured annexures.</span>
-            </li>
-            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-[#21242C] font-semibold">Precedent cross-check:</strong> Real-time alignment against the latest High Court and Supreme Court family law judgments.</span>
-            </li>
-            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong class="text-[#21242C] font-semibold">Co-parenting shield:</strong> Neutralize heated drafts into dispute-proof, court-safe parenting responses.</span>
-            </li>
-          </ul>
-          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors bg-[#7A2E2E] text-[#EAE4D6] hover:bg-[#5C2222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm">Choose Litigation Pro</a>
-        </div>
-
-        <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
             <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Trial Suite</h3>
             <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Unrestricted workspace for intensive cross-examinations, forensic asset division, and high-conflict trials.</p>
@@ -120,32 +81,74 @@ import Layout from '../layouts/Layout.astro';
           
           <ul class="flex-grow space-y-4 mb-10">
             <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
               50x more usage than free
             </li>
             
-            <li class="text-[13.5px] font-semibold text-[#21242C]">
+            <li class="text-[13.5px] font-semibold text-[#7A2E2E]">
               Everything in Litigation Pro, plus:
             </li>
             
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               <span><strong class="text-[#21242C] font-semibold">Mock cross-examination:</strong> Rehearse tough, hostile questions before you step into the witness box.</span>
             </li>
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               <span><strong class="text-[#21242C] font-semibold">Section 63 BSA packager:</strong> Format digital logs to strictly fulfill electronic evidence certificate criteria.</span>
             </li>
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               <span><strong class="text-[#21242C] font-semibold">Contradiction analyzer:</strong> Cross-check opposing petitions to highlight factual discrepancies.</span>
             </li>
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
-              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               <span><strong class="text-[#21242C] font-semibold">Multi-property forensic breakdown:</strong> Analyze complex joint real estate, business valuations, and ancestral property claims.</span>
             </li>
           </ul>
-          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#EAE4D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Trial Suite</a>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors bg-[#7A2E2E] text-[#EAE4D6] hover:bg-[#5C2222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm">Choose Trial Suite</a>
+        </div>
+
+        <!-- Litigation Pro -->
+        <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
+          <div class="mb-6">
+            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Litigation Pro</h3>
+            <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Comprehensive toolkit for contested petitions, custody battles, and maintenance hearings.</p>
+          </div>
+          <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
+            <span class="text-xl font-medium text-[#21242C]">₹</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="1,489" data-yearly="14,890">1,489</span>
+            <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
+          </div>
+          
+          <ul class="flex-grow space-y-4 mb-10">
+            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
+              <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              20x more usage than free
+            </li>
+            
+            <li class="text-[13.5px] font-semibold text-[#21242C]">
+              Everything in Free, plus:
+            </li>
+            
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Rajnesh v. Neha disclosures:</strong> Auto-format complex financial affidavits to comply with Supreme Court templates.</span>
+            </li>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Evidence sorter:</strong> Tag, date, and organize toxic WhatsApp and email chat screenshots into structured annexures.</span>
+            </li>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Precedent cross-check:</strong> Real-time alignment against the latest High Court and Supreme Court family law judgments.</span>
+            </li>
+            <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
+              <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong class="text-[#21242C] font-semibold">Co-parenting shield:</strong> Neutralize heated drafts into dispute-proof, court-safe parenting responses.</span>
+            </li>
+          </ul>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#EAE4D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Litigation Pro</a>
         </div>
 
       </div>
@@ -305,7 +308,6 @@ import Layout from '../layouts/Layout.astro';
       slider.classList.add('translate-x-full');
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-yearly'));
-        // FIX: Changed from '/mo, billed annually' to '/yr'
         periodVals[index].innerText = '/yr'; 
       });
     });
