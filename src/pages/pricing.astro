@@ -28,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
             Monthly billing
           </button>
           <button id="tabYearly" class="relative z-10 w-1/2 py-2.5 text-[14.5px] font-medium text-[#4A4E58] transition-colors duration-200 flex items-center justify-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] rounded-full">
-            Yearly <span class="bg-[#EAE4D6] text-[#7A2E2E] border border-[#DBD3C1] px-2 py-0.5 rounded-full text-[11px] font-bold tracking-wide">3.5 MO FREE</span>
+            Yearly <span class="bg-[#EAE4D6] text-[#7A2E2E] border border-[#DBD3C1] px-2 py-0.5 rounded-full text-[11px] font-bold tracking-wide">2 MO FREE</span>
           </button>
         </div>
       </div>
@@ -76,12 +76,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="mb-8 pb-8 border-b border-[#DBD3C1]">
             <div class="flex items-baseline gap-1.5 mb-1.5">
               <span class="text-xl font-medium text-[#21242C]">₹</span>
-              <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="1,489" data-yearly="12,657">1,489</span>
+              <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="1,299" data-yearly="13,026">1,299</span>
               <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
             </div>
-            <div class="annual-savings hidden flex items-center gap-2">
-              <span class="text-[#7A2E2E] text-[13px] font-medium line-through">₹17,868</span>
-              <span class="bg-[#EAE4D6] text-[#7A2E2E] px-2 py-0.5 rounded text-[11px] font-bold tracking-wide">29.17% OFF</span>
+            <div class="flex items-center gap-2">
+              <span class="strike-val text-[#7A2E2E] text-[13px] font-medium line-through" data-monthly="₹1,499" data-yearly="₹17,988">₹1,499</span>
+              <span class="discount-val bg-[#EAE4D6] text-[#7A2E2E] px-2 py-0.5 rounded text-[11px] font-bold tracking-wide" data-monthly="13.34% OFF" data-yearly="27.58% OFF">13.34% OFF</span>
             </div>
           </div>
           
@@ -124,12 +124,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="mb-8 pb-8 border-b border-[#DBD3C1]">
             <div class="flex items-baseline gap-1.5 mb-1.5">
               <span class="text-xl font-medium text-[#21242C]">₹</span>
-              <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="2,989" data-yearly="25,407">2,989</span>
+              <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="3,099" data-yearly="31,078">3,099</span>
               <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
             </div>
-            <div class="annual-savings hidden flex items-center gap-2">
-              <span class="text-[#7A2E2E] text-[13px] font-medium line-through">₹35,868</span>
-              <span class="bg-[#EAE4D6] text-[#7A2E2E] px-2 py-0.5 rounded text-[11px] font-bold tracking-wide">29.17% OFF</span>
+            <div class="flex items-center gap-2">
+              <span class="strike-val text-[#7A2E2E] text-[13px] font-medium line-through" data-monthly="₹3,599" data-yearly="₹43,188">₹3,599</span>
+              <span class="discount-val bg-[#EAE4D6] text-[#7A2E2E] px-2 py-0.5 rounded text-[11px] font-bold tracking-wide" data-monthly="13.89% OFF" data-yearly="28.04% OFF">13.89% OFF</span>
             </div>
           </div>
           
@@ -171,7 +171,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="max-w-2xl">
           <h2 class="font-serif text-2xl md:text-3xl text-[#21242C] mb-3">Why an annual plan makes strategic sense</h2>
           <p class="text-[16px] text-[#4A4E58] leading-relaxed">
-            Contested matrimonial disputes in Indian family courts can take several years to resolve. An annual plan provides uninterrupted document access, preserves your case history, and saves roughly <strong> 29% </strong>over paying monthly.
+            Contested matrimonial disputes in Indian family courts can take several years to resolve. An annual plan provides uninterrupted document access, preserves your case history, and saves upto <strong> 28% </strong>over paying monthly.
           </p>
         </div>
         <div class="flex-shrink-0 w-full lg:w-auto">
@@ -293,8 +293,9 @@ import Layout from '../layouts/Layout.astro';
     const slider = document.getElementById('activeSlider');
     const priceVals = document.querySelectorAll('.price-val');
     const periodVals = document.querySelectorAll('.billing-period');
+    const strikeVals = document.querySelectorAll('.strike-val');
+    const discountVals = document.querySelectorAll('.discount-val');
     const applyAnnualBtn = document.getElementById('applyAnnualBtn');
-    const annualSavingsElements = document.querySelectorAll('.annual-savings');
 
     function animateValueChange(element, newValue) {
       element.style.opacity = '0';
@@ -311,24 +312,28 @@ import Layout from '../layouts/Layout.astro';
       tabMonthly.classList.replace('text-[#4A4E58]', 'text-[#EAE4D6]');
       tabYearly.classList.replace('text-[#EAE4D6]', 'text-[#4A4E58]');
       slider.classList.remove('translate-x-full');
+      
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-monthly'));
         periodVals[index].innerText = '/mo';
       });
-      // Hide savings text
-      annualSavingsElements.forEach(el => el.classList.add('hidden'));
+
+      strikeVals.forEach(el => animateValueChange(el, el.getAttribute('data-monthly')));
+      discountVals.forEach(el => animateValueChange(el, el.getAttribute('data-monthly')));
     });
 
     tabYearly.addEventListener('click', () => {
       tabYearly.classList.replace('text-[#4A4E58]', 'text-[#EAE4D6]');
       tabMonthly.classList.replace('text-[#EAE4D6]', 'text-[#4A4E58]');
       slider.classList.add('translate-x-full');
+      
       priceVals.forEach((el, index) => {
         animateValueChange(el, el.getAttribute('data-yearly'));
         periodVals[index].innerText = '/yr'; 
       });
-      // Show savings text
-      annualSavingsElements.forEach(el => el.classList.remove('hidden'));
+
+      strikeVals.forEach(el => animateValueChange(el, el.getAttribute('data-yearly')));
+      discountVals.forEach(el => animateValueChange(el, el.getAttribute('data-yearly')));
     });
 
     if (applyAnnualBtn) {
