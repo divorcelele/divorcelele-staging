@@ -183,7 +183,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
           <button
             onClick={verifyOtp}
             disabled={isVerifying || otp.length < 6}
-            className="w-full py-3 px-4 bg-[#21242C] text-[#EAE4D6] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors disabled:bg-[#DBD3C1] disabled:text-[#EAE4D6] flex items-center justify-center min-h-[46px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
+            className="w-full py-3 px-4 bg-[#21242C] text-[#EAE4D6] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors disabled:bg-[#DBD3C1] disabled:text-[#4A4E58] flex items-center justify-center min-h-[46px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
           >
             {isVerifying ? (
               <div className="animate-spin h-5 w-5 border-2 border-[#EAE4D6] border-t-transparent rounded-full"></div>
