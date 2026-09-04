@@ -461,11 +461,11 @@ import Layout from '../layouts/Layout.astro';
       if (!stickyCta || !sentinel || !pricingSection) return;
 
       let isPastHero = false;
-      let isPricingVisible = false;
+      let isReachedPricing = false;
 
       const updateCTAVisibility = () => {
-        // Toggle the data-visible attribute to trigger Tailwind's translation classes
-        if (isPastHero && !isPricingVisible) {
+        // Show CTA only if we are past the hero AND haven't reached the pricing section
+        if (isPastHero && !isReachedPricing) {
           stickyCta.setAttribute('data-visible', 'true');
         } else {
           stickyCta.setAttribute('data-visible', 'false');
@@ -481,12 +481,24 @@ import Layout from '../layouts/Layout.astro';
 
       // Watch the Pricing Section
       const pricingObserver = new IntersectionObserver((entries) => {
-        isPricingVisible = entries[0].isIntersecting;
+        const entry = entries[0];
+        
+        if (entry.isIntersecting) {
+          // The pricing section is currently on screen
+          isReachedPricing = true;
+        } else {
+          // If it's off screen, check if it's above the viewport (meaning we scrolled past it into the footer)
+          // If top < 0, we are below it. If top > 0, we are above it.
+          isReachedPricing = entry.boundingClientRect.top < 0;
+        }
+        
         updateCTAVisibility();
-      }, { threshold: 0.05 });
+      });
 
       sentinelObserver.observe(sentinel);
       pricingObserver.observe(pricingSection);
     });
   </script>
+
+  
 </Layout>
