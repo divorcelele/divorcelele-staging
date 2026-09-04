@@ -7,33 +7,24 @@ import Layout from '../layouts/Layout.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- STICKY SCROLL CTA (appears after hero, hides at pricing) -->
-  <div
-    id="sticky-cta"
-    class="fixed top-0 left-0 right-0 z-50 -translate-y-full transition-transform duration-300 ease-out bg-[#21242C]/95 backdrop-blur-sm border-b border-[#4A4E58] shadow-md"
-  >
-    <div class="max-w-[1120px] mx-auto px-6 py-3 flex items-center justify-between gap-4">
-      <p class="hidden sm:block text-[#F2EEE5] text-[14px] font-medium leading-snug">
-        Your strategic advantage in family court — start today.
-      </p>
-      <div class="flex items-center gap-4 sm:gap-5 ml-auto">
-        <a
-          href="/pricing"
-          class="hidden sm:inline-block text-[#DBD3C1] text-[13.5px] font-medium hover:text-white transition-colors"
-        >
-          View pricing
-        </a>
-        <a
-          href="/assistant"
-          class="px-5 py-2.5 bg-[#F2EEE5] text-[#21242C] text-[13.5px] font-medium rounded-md hover:bg-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F2EEE5] whitespace-nowrap"
-        >
-          Try the assistant
-        </a>
+  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 relative">
+
+    <!-- STICKY TOP CTA -->
+    <div id="sticky-cta" class="fixed top-0 left-0 w-full bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#DBD3C1] py-3.5 px-6 z-50 -translate-y-full transition-transform duration-300 ease-in-out shadow-sm">
+      <div class="max-w-[1120px] mx-auto flex items-center justify-between gap-4">
+        <div class="hidden sm:block">
+          <p class="font-serif text-[17px] font-medium text-[#21242C] tracking-tight">Your strategic advantage in family court</p>
+        </div>
+        <div class="flex items-center gap-6 w-full sm:w-auto justify-end">
+          <a href="/pricing" class="text-[14.5px] font-medium text-[#4A4E58] hover:text-[#21242C] transition-colors underline-offset-4 hover:underline focus-visible:outline-none">
+            View pricing
+          </a>
+          <a href="/assistant" class="px-5 py-2.5 bg-[#21242C] text-[#F2EEE5] text-[13.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm">
+            Try the assistant
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20">
 
     <!-- HERO SECTION -->
     <section class="pt-24 pb-20 md:pt-32 md:pb-32 px-6 text-center max-w-4xl mx-auto">
@@ -53,8 +44,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Sentinel: marks the end of the hero for the sticky CTA trigger -->
-    <div id="hero-sentinel" class="h-px w-full" aria-hidden="true"></div>
+    <!-- INVISIBLE SENTINEL TO TRIGGER STICKY CTA -->
+    <div id="hero-sentinel" class="w-full h-px invisible" aria-hidden="true"></div>
 
     <!-- FEATURES SECTION -->
     <section id="features" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
@@ -166,106 +157,101 @@ import Layout from '../layouts/Layout.astro';
             Watch how we turn months of chaotic WhatsApp logs and financial documents into court-ready files in under 2 minutes.
           </p>
         </div>
-
+        
         <div class="rounded-xl md:rounded-2xl overflow-hidden border border-[#DBD3C1] bg-[#21242C] group cursor-pointer relative transition-transform hover:-translate-y-1 duration-300 shadow-xl">
           <div class="aspect-video relative flex items-center justify-center overflow-hidden">
-
             <!-- Simulated Video Thumbnail Background -->
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105"></div>
-
+            
             <!-- Dark Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#21242C]/80 via-[#21242C]/20 to-transparent"></div>
-
-            <!-- Play Button (Scaled responsively) -->
+            
+            <!-- Play Button -->
             <div class="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:bg-white group-hover:text-[#7A2E2E] transition-all duration-300 relative z-10 shadow-2xl">
               <svg class="w-6 h-6 md:w-8 md:h-8 ml-1 md:ml-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USER TESTIMONIALS SECTION (Absolute Privacy) -->
-   <section id="reviews" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
-  <div class="max-w-[1120px] mx-auto">
-    <div class="max-w-[640px] mb-16 mx-auto text-center">
-      <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-4">
-        Trusted by people in your shoes
-      </h2>
-      <p class="text-[17px] text-[#4A4E58] leading-relaxed">
-        Real outcomes from users navigating family court. Identities are strictly protected for absolute privacy.
-      </p>
-    </div>
+    <!-- USER TESTIMONIALS SECTION -->
+    <section id="reviews" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+      <div class="max-w-[1120px] mx-auto">
+        <div class="max-w-[640px] mb-16 mx-auto text-center">
+          <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-4">
+            Trusted by people in your shoes
+          </h2>
+          <p class="text-[17px] text-[#4A4E58] leading-relaxed">
+            Real outcomes from users navigating family court. Identities are strictly protected for absolute privacy.
+          </p>
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "I was paying my lawyer a fortune just to read through toxic WhatsApp chats. The assistant categorized everything into neat annexures in seconds. Paid for itself instantly."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">R., Delhi</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "The mock cross-examination tool helped me stay calm. Practicing the hostile questions privately meant I didn't lose my temper in actual mediation."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">S., Mumbai</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "I was paying my lawyer a fortune just to read through toxic WhatsApp chats. The assistant categorized everything into neat annexures in seconds. Paid for itself instantly."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">R., Delhi</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "Formatting my financial affidavit accurately felt impossible until I used this. It perfectly matched the Supreme Court templates my lawyer required."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">A., Bengaluru</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
 
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "The mock cross-examination tool helped me stay calm. Practicing the hostile questions privately meant I didn't lose my temper in actual mediation."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">S., Mumbai</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "I had documents scattered across emails, PDFs, and messages. Having everything organized in one place made preparing for my hearing much less overwhelming."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">P., Pune</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
 
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "Formatting my financial affidavit accurately felt impossible until I used this. It perfectly matched the Supreme Court templates my lawyer required."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">A., Bengaluru</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "The timeline feature saved me hours. I could finally see the important events in order instead of digging through months of messages and documents."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">N., Hyderabad</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
 
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "I had documents scattered across emails, PDFs, and messages. Having everything organized in one place made preparing for my hearing much less overwhelming."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">P., Pune</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
+          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+            <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
+              "I didn't know where to start with all the paperwork. The assistant broke everything down into manageable steps and helped me prepare questions for my lawyer."
+            </p>
+            <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
+              <p class="text-[14px] font-semibold text-[#21242C]">M., Chennai</p>
+              <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "The timeline feature saved me hours. I could finally see the important events in order instead of digging through months of messages and documents."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">N., Hyderabad</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
-
-  <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
-    <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
-      "I didn't know where to start with all the paperwork. The assistant broke everything down into manageable steps and helped me prepare questions for my lawyer."
-    </p>
-    <div class="border-t border-[#DBD3C1] pt-4 mt-auto">
-      <p class="text-[14px] font-semibold text-[#21242C]">M., Chennai</p>
-      <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
-    </div>
-  </div>
-</div>
-
-
-  </div>
-</section>
-
-    <!-- LAWYER TESTIMONIALS SECTION (Scalable Video/Text Grid) -->
+    <!-- LAWYER TESTIMONIALS SECTION -->
     <section id="lawyer-reviews" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#F2EEE5]">
       <div class="max-w-[1200px] mx-auto">
         <div class="max-w-[640px] mb-16 mx-auto text-center">
@@ -276,9 +262,9 @@ import Layout from '../layouts/Layout.astro';
             Advocates across High Courts and Family Courts recommend DivorceLele to their clients to organize evidence and streamline case prep.
           </p>
         </div>
-
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+          
           <!-- Lawyer 1 -->
           <div class="bg-white border border-[#DBD3C1] rounded-md overflow-hidden shadow-sm flex flex-col group">
             <div class="aspect-[16/9] relative bg-[#21242C] cursor-pointer overflow-hidden">
@@ -341,7 +327,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
           </div>
-
+          
         </div>
       </div>
     </section>
@@ -357,7 +343,7 @@ import Layout from '../layouts/Layout.astro';
             Clear answers about privacy, legality, and how the assistant works.
           </p>
         </div>
-
+        
         <div class="space-y-4">
           <details class="group bg-white p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
             <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
@@ -458,47 +444,49 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
   </div>
-
+  
   <style>
     .font-serif { font-family: 'Fraunces', serif; }
     .font-sans { font-family: 'Public Sans', sans-serif; }
   </style>
 
   <script>
-    // Sticky CTA visibility: show once the hero has scrolled past,
-    // hide again once the pricing section comes into view.
-    const stickyBar = document.getElementById('sticky-cta');
-    const heroSentinel = document.getElementById('hero-sentinel');
-    const pricingSection = document.getElementById('pricing');
+    document.addEventListener('DOMContentLoaded', () => {
+      const stickyCta = document.getElementById('sticky-cta');
+      const sentinel = document.getElementById('hero-sentinel');
+      const pricingSection = document.getElementById('pricing');
 
-    let pastHero = false;
-    let atPricing = false;
+      if (!stickyCta || !sentinel || !pricingSection) return;
 
-    function updateStickyBar() {
-      const shouldShow = pastHero && !atPricing;
-      stickyBar.classList.toggle('-translate-y-full', !shouldShow);
-      stickyBar.classList.toggle('translate-y-0', shouldShow);
-    }
+      let isPastHero = false;
+      let isPricingVisible = false;
 
-    if (stickyBar && heroSentinel && pricingSection) {
-      const heroObserver = new IntersectionObserver(
-        ([entry]) => {
-          // Sentinel has scrolled above the viewport => hero is fully passed.
-          pastHero = entry.boundingClientRect.top < 0;
-          updateStickyBar();
-        },
-        { threshold: 0 }
-      );
-      heroObserver.observe(heroSentinel);
+      const updateCTAVisibility = () => {
+        // Show CTA only if we have scrolled past the hero AND pricing is not currently visible
+        if (isPastHero && !isPricingVisible) {
+          stickyCta.classList.remove('-translate-y-full');
+        } else {
+          stickyCta.classList.add('-translate-y-full');
+        }
+      };
 
-      const pricingObserver = new IntersectionObserver(
-        ([entry]) => {
-          atPricing = entry.isIntersecting;
-          updateStickyBar();
-        },
-        { threshold: 0, rootMargin: '-10% 0px 0px 0px' }
-      );
+      // Watch the sentinel line directly below the hero section
+      const sentinelObserver = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        // If the sentinel is off-screen AND its top bounds are above the viewport (top < 0), 
+        // it means we have scrolled down past it.
+        isPastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        updateCTAVisibility();
+      });
+
+      // Watch the Pricing Section
+      const pricingObserver = new IntersectionObserver((entries) => {
+        isPricingVisible = entries[0].isIntersecting;
+        updateCTAVisibility();
+      }, { threshold: 0.05 });
+
+      sentinelObserver.observe(sentinel);
       pricingObserver.observe(pricingSection);
-    }
+    });
   </script>
 </Layout>
