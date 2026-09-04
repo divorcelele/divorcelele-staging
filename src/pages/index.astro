@@ -9,23 +9,6 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 relative">
 
-    <!-- STICKY TOP CTA -->
-    <div id="sticky-cta" class="fixed top-0 left-0 w-full bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#DBD3C1] py-3.5 px-6 z-50 -translate-y-full transition-transform duration-300 ease-in-out shadow-sm">
-      <div class="max-w-[1120px] mx-auto flex items-center justify-between gap-4">
-        <div class="hidden sm:block">
-          <p class="font-serif text-[17px] font-medium text-[#21242C] tracking-tight">Your strategic advantage in family court</p>
-        </div>
-        <div class="flex items-center gap-6 w-full sm:w-auto justify-end">
-          <a href="/pricing" class="text-[14.5px] font-medium text-[#4A4E58] hover:text-[#21242C] transition-colors underline-offset-4 hover:underline focus-visible:outline-none">
-            View pricing
-          </a>
-          <a href="/assistant" class="px-5 py-2.5 bg-[#21242C] text-[#F2EEE5] text-[13.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm">
-            Try the assistant
-          </a>
-        </div>
-      </div>
-    </div>
-
     <!-- HERO SECTION -->
     <section class="pt-24 pb-20 md:pt-32 md:pb-32 px-6 text-center max-w-4xl mx-auto">
       <h1 class="font-serif text-[clamp(2.25rem,5vw,4.5rem)] font-medium text-[#21242C] mb-6 leading-[1.1] tracking-tight">
@@ -443,6 +426,25 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- STICKY BOTTOM CTA -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 w-full bg-[#EAE4D6] border-t border-[#DBD3C1] py-4 px-4 md:px-6 z-50 translate-y-full transition-transform duration-300 ease-in-out shadow-[0_-4px_20px_rgb(0,0,0,0.08)]">
+      <div class="max-w-[1120px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <div class="text-center sm:text-left w-full sm:w-auto">
+          <p class="font-serif text-[16px] sm:text-[17px] font-medium text-[#21242C] tracking-tight">
+            India's 1st AI Powered Divorce Assistant.
+          </p>
+        </div>
+        <div class="flex flex-row items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
+          <a href="/pricing" class="flex-1 sm:flex-none text-center px-4 py-2.5 bg-white text-[#21242C] text-[13.5px] font-medium rounded-md border border-[#DBD3C1] hover:bg-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">
+            View pricing
+          </a>
+          <a href="/assistant" class="flex-1 sm:flex-none text-center px-4 py-2.5 bg-[#21242C] text-[#F2EEE5] text-[13.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm">
+            Try the assistant
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
   
   <style>
@@ -464,9 +466,9 @@ import Layout from '../layouts/Layout.astro';
       const updateCTAVisibility = () => {
         // Show CTA only if we have scrolled past the hero AND pricing is not currently visible
         if (isPastHero && !isPricingVisible) {
-          stickyCta.classList.remove('-translate-y-full');
+          stickyCta.classList.remove('translate-y-full');
         } else {
-          stickyCta.classList.add('-translate-y-full');
+          stickyCta.classList.add('translate-y-full');
         }
       };
 
