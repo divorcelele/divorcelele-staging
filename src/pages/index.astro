@@ -427,7 +427,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
  <!-- STICKY RESPONSIVE CTA -->
-    <div id="sticky-cta" data-visible="false" class="fixed bottom-0 md:bottom-auto md:top-0 left-0 w-full bg-[#EAE4D6] border-t md:border-t-0 md:border-b border-[#DBD3C1] py-4 px-4 md:px-6 z-50 transition-transform duration-300 ease-in-out translate-y-full md:-translate-y-full data-[visible=true]:translate-y-0 shadow-[0_-4px_20px_rgb(0,0,0,0.08)] md:shadow-[0_4px_20px_rgb(0,0,0,0.08)]">
+    <div id="sticky-cta" data-visible="false" class="fixed bottom-0 md:bottom-auto md:top-0 left-0 w-full bg-[#EAE4D6] border-t md:border-t-0 md:border-b border-[#DBD3C1] py-4 px-4 md:px-6 z-50 translate-y-full md:-translate-y-full data-[visible=true]:translate-y-0 shadow-[0_-4px_20px_rgb(0,0,0,0.08)] md:shadow-[0_4px_20px_rgb(0,0,0,0.08)]">
       <div class="max-w-[1120px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <div class="text-center sm:text-left w-full sm:w-auto">
           <p class="font-serif text-[16px] sm:text-[17px] font-medium text-[#21242C] tracking-tight">
@@ -460,11 +460,15 @@ import Layout from '../layouts/Layout.astro';
 
       if (!stickyCta || !sentinel || !pricingSection) return;
 
+      // Prevent the load "blink" by adding animations only after initial render
+      setTimeout(() => {
+        stickyCta.classList.add('transition-transform', 'duration-300', 'ease-in-out');
+      }, 100);
+
       let isPastHero = false;
       let isReachedPricing = false;
 
       const updateCTAVisibility = () => {
-        // Show CTA only if we are past the hero AND haven't reached the pricing section
         if (isPastHero && !isReachedPricing) {
           stickyCta.setAttribute('data-visible', 'true');
         } else {
@@ -472,23 +476,18 @@ import Layout from '../layouts/Layout.astro';
         }
       };
 
-      // Watch the sentinel line directly below the hero section
       const sentinelObserver = new IntersectionObserver((entries) => {
         const entry = entries[0];
         isPastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
         updateCTAVisibility();
       });
 
-      // Watch the Pricing Section
       const pricingObserver = new IntersectionObserver((entries) => {
         const entry = entries[0];
         
         if (entry.isIntersecting) {
-          // The pricing section is currently on screen
           isReachedPricing = true;
         } else {
-          // If it's off screen, check if it's above the viewport (meaning we scrolled past it into the footer)
-          // If top < 0, we are below it. If top > 0, we are above it.
           isReachedPricing = entry.boundingClientRect.top < 0;
         }
         
@@ -500,5 +499,5 @@ import Layout from '../layouts/Layout.astro';
     });
   </script>
 
-  
+
 </Layout>
