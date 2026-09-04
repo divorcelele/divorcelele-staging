@@ -10,7 +10,6 @@ import Layout from '../layouts/Layout.astro';
   <div class="bg-[#EAE4D6] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 py-20 md:py-32">
     <div class="max-w-[1200px] mx-auto px-6">
 
-      <!-- Header -->
       <div class="text-center max-w-2xl mx-auto mb-14 md:mb-20">
         <div class="text-[13px] text-[#7A2E2E] font-semibold mb-3 tracking-wide uppercase">Built for Indian family courts</div>
         <h1 class="font-serif text-[clamp(2.25rem,4vw,3.5rem)] font-medium text-[#21242C] mb-5 leading-[1.15] tracking-tight">
@@ -21,7 +20,6 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Segmented Control Toggle -->
       <div class="billing-toggle-container flex justify-center mb-14 md:mb-20">
         <div class="relative bg-white border border-[#DBD3C1] p-1.5 rounded-full inline-flex w-[340px] shadow-sm">
           <div id="activeSlider" class="absolute top-1.5 left-1.5 bottom-1.5 w-[calc(50%-6px)] bg-[#21242C] rounded-full transition-transform duration-300 ease-out z-0"></div>
@@ -35,26 +33,20 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Pricing Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24 items-start">
 
-        <!-- Clarity Plan -->
         <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
-            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Clarity</h3>
+            <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Free</h3>
             <p class="text-[14px] text-[#4A4E58] min-h-[44px] leading-relaxed">Designed for initial assessment, amicable mutual consent, and petition structuring.</p>
           </div>
           <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
             <span class="text-xl font-medium text-[#21242C]">₹</span>
-            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="2,499" data-yearly="23,999">2,499</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="0" data-yearly="0">0</span>
             <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
           
           <ul class="flex-grow space-y-4 mb-10">
-            <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
-              <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              200 AI strategic actions / month
-            </li>
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
               <svg class="w-5 h-5 text-[#DBD3C1] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               <span><strong class="text-[#21242C] font-semibold">Notice translator:</strong> Instant Hindi & English breakdowns of opposing counsel summons and legal notices.</span>
@@ -68,10 +60,9 @@ import Layout from '../layouts/Layout.astro';
               <span><strong class="text-[#21242C] font-semibold">Marital timeline builder:</strong> Convert years of complex domestic history into a clear, fact-checked chronology.</span>
             </li>
           </ul>
-          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#EAE4D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Clarity</a>
+          <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors border border-[#21242C] bg-transparent text-[#21242C] hover:bg-[#21242C] hover:text-[#EAE4D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]">Choose Free</a>
         </div>
 
-        <!-- Litigation Pro (Featured) -->
         <div class="bg-white border border-[#7A2E2E] rounded-md p-8 md:p-10 flex flex-col h-full relative shadow-xl lg:scale-105 z-10">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7A2E2E] text-[#EAE4D6] text-[11.5px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
             Most recommended
@@ -82,18 +73,18 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
             <span class="text-xl font-medium text-[#21242C]">₹</span>
-            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="7,999" data-yearly="79,999">7,999</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="1,489" data-yearly="14,890">1,489</span>
             <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
           
           <ul class="flex-grow space-y-4 mb-10">
             <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
               <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              750 AI strategic actions / month
+              20x more usage than free
             </li>
             
             <li class="text-[13.5px] font-semibold text-[#7A2E2E]">
-              Everything in Clarity, plus:
+              Everything in Free, plus:
             </li>
             
             <li class="flex items-start gap-3 text-[14px] text-[#4A4E58] leading-relaxed">
@@ -116,7 +107,6 @@ import Layout from '../layouts/Layout.astro';
           <a href="#checkout" class="block w-full py-3.5 px-4 rounded-md text-center text-[15px] font-medium transition-colors bg-[#7A2E2E] text-[#EAE4D6] hover:bg-[#5C2222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7A2E2E] shadow-sm">Choose Litigation Pro</a>
         </div>
 
-        <!-- Trial Suite -->
         <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 md:p-10 flex flex-col h-full shadow-sm">
           <div class="mb-6">
             <h3 class="font-serif text-[26px] font-medium text-[#21242C] mb-2">Trial Suite</h3>
@@ -124,14 +114,14 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="flex items-baseline gap-1.5 mb-8 pb-8 border-b border-[#DBD3C1]">
             <span class="text-xl font-medium text-[#21242C]">₹</span>
-            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="21,999" data-yearly="219,999">21,999</span>
+            <span class="price-val font-serif text-[40px] text-[#21242C] tracking-tight leading-none" data-monthly="2,989" data-yearly="29,890">2,989</span>
             <span class="billing-period text-[#4A4E58] text-[15px]">/mo</span>
           </div>
           
           <ul class="flex-grow space-y-4 mb-10">
             <li class="flex items-start gap-3 text-[14.5px] text-[#21242C] font-medium border-b border-[#DBD3C1]/50 pb-4 mb-4">
               <svg class="w-5 h-5 text-[#A8813F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              2,000 AI strategic actions / month
+              50x more usage than free
             </li>
             
             <li class="text-[13.5px] font-semibold text-[#21242C]">
@@ -160,7 +150,6 @@ import Layout from '../layouts/Layout.astro';
 
       </div>
 
-      <!-- Long-term Proceedings Context -->
       <div class="bg-white border border-[#DBD3C1] rounded-md p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm mb-24 md:mb-32">
         <div class="max-w-2xl">
           <h2 class="font-serif text-2xl md:text-3xl text-[#21242C] mb-3">Why an annual plan makes strategic sense</h2>
@@ -176,7 +165,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
 
-      <!-- FAQ SECTION -->
       <div class="max-w-4xl mx-auto border-t border-[#DBD3C1] pt-20">
         <div class="text-center mb-16">
           <h2 class="font-serif text-[clamp(2rem,4vw,2.5rem)] font-medium text-[#21242C] mb-4">FAQs</h2>
@@ -185,7 +173,6 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="space-y-12">
           
-          <!-- Category 1 -->
           <div>
             <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Plans & Usage</h3>
             <div class="space-y-3">
@@ -208,13 +195,12 @@ import Layout from '../layouts/Layout.astro';
                   </span>
                 </summary>
                 <p class="text-[#4A4E58] mt-4 leading-relaxed text-[15px]">
-                  Yes. Many users start on the Clarity plan and upgrade to Litigation Pro if mediation fails and the case goes to trial. Upgrades take effect immediately, and you will only be charged a prorated amount for the remainder of your billing cycle.
+                  Yes. Many users start on the Free plan and upgrade to Litigation Pro if mediation fails and the case goes to trial. Upgrades take effect immediately, and you will only be charged a prorated amount for the remainder of your billing cycle.
                 </p>
               </details>
             </div>
           </div>
 
-          <!-- Category 2 -->
           <div>
             <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Billing & Payments</h3>
             <div class="space-y-3">
@@ -243,7 +229,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <!-- Category 3 -->
           <div>
             <h3 class="text-[14px] font-bold text-[#7A2E2E] uppercase tracking-wider mb-6 pb-2 border-b border-[#DBD3C1]">Managing your plan</h3>
             <div class="space-y-3">
