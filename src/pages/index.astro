@@ -7,6 +7,32 @@ import Layout from '../layouts/Layout.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- STICKY SCROLL CTA (appears after hero, hides at pricing) -->
+  <div
+    id="sticky-cta"
+    class="fixed top-0 left-0 right-0 z-50 -translate-y-full transition-transform duration-300 ease-out bg-[#21242C]/95 backdrop-blur-sm border-b border-[#4A4E58] shadow-md"
+  >
+    <div class="max-w-[1120px] mx-auto px-6 py-3 flex items-center justify-between gap-4">
+      <p class="hidden sm:block text-[#F2EEE5] text-[14px] font-medium leading-snug">
+        Your strategic advantage in family court — start today.
+      </p>
+      <div class="flex items-center gap-4 sm:gap-5 ml-auto">
+        <a
+          href="/pricing"
+          class="hidden sm:inline-block text-[#DBD3C1] text-[13.5px] font-medium hover:text-white transition-colors"
+        >
+          View pricing
+        </a>
+        <a
+          href="/assistant"
+          class="px-5 py-2.5 bg-[#F2EEE5] text-[#21242C] text-[13.5px] font-medium rounded-md hover:bg-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F2EEE5] whitespace-nowrap"
+        >
+          Try the assistant
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div class="bg-[#F2EEE5] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20">
 
     <!-- HERO SECTION -->
@@ -26,6 +52,9 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
     </section>
+
+    <!-- Sentinel: marks the end of the hero for the sticky CTA trigger -->
+    <div id="hero-sentinel" class="h-px w-full" aria-hidden="true"></div>
 
     <!-- FEATURES SECTION -->
     <section id="features" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
@@ -137,16 +166,16 @@ import Layout from '../layouts/Layout.astro';
             Watch how we turn months of chaotic WhatsApp logs and financial documents into court-ready files in under 2 minutes.
           </p>
         </div>
-        
+
         <div class="rounded-xl md:rounded-2xl overflow-hidden border border-[#DBD3C1] bg-[#21242C] group cursor-pointer relative transition-transform hover:-translate-y-1 duration-300 shadow-xl">
           <div class="aspect-video relative flex items-center justify-center overflow-hidden">
-            
+
             <!-- Simulated Video Thumbnail Background -->
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105"></div>
-            
+
             <!-- Dark Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#21242C]/80 via-[#21242C]/20 to-transparent"></div>
-            
+
             <!-- Play Button (Scaled responsively) -->
             <div class="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:bg-white group-hover:text-[#7A2E2E] transition-all duration-300 relative z-10 shadow-2xl">
               <svg class="w-6 h-6 md:w-8 md:h-8 ml-1 md:ml-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -180,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-[12.5px] text-[#A8813F] font-medium mt-0.5">Identity Protected</p>
     </div>
   </div>
-  
+
   <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
     <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
       "The mock cross-examination tool helped me stay calm. Practicing the hostile questions privately meant I didn't lose my temper in actual mediation."
@@ -247,9 +276,9 @@ import Layout from '../layouts/Layout.astro';
             Advocates across High Courts and Family Courts recommend DivorceLele to their clients to organize evidence and streamline case prep.
           </p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
           <!-- Lawyer 1 -->
           <div class="bg-white border border-[#DBD3C1] rounded-md overflow-hidden shadow-sm flex flex-col group">
             <div class="aspect-[16/9] relative bg-[#21242C] cursor-pointer overflow-hidden">
@@ -312,7 +341,6 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
           </div>
-          
 
         </div>
       </div>
@@ -329,7 +357,7 @@ import Layout from '../layouts/Layout.astro';
             Clear answers about privacy, legality, and how the assistant works.
           </p>
         </div>
-        
+
         <div class="space-y-4">
           <details class="group bg-white p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
             <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
@@ -430,9 +458,47 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
   </div>
-  
+
   <style>
     .font-serif { font-family: 'Fraunces', serif; }
     .font-sans { font-family: 'Public Sans', sans-serif; }
   </style>
+
+  <script>
+    // Sticky CTA visibility: show once the hero has scrolled past,
+    // hide again once the pricing section comes into view.
+    const stickyBar = document.getElementById('sticky-cta');
+    const heroSentinel = document.getElementById('hero-sentinel');
+    const pricingSection = document.getElementById('pricing');
+
+    let pastHero = false;
+    let atPricing = false;
+
+    function updateStickyBar() {
+      const shouldShow = pastHero && !atPricing;
+      stickyBar.classList.toggle('-translate-y-full', !shouldShow);
+      stickyBar.classList.toggle('translate-y-0', shouldShow);
+    }
+
+    if (stickyBar && heroSentinel && pricingSection) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          // Sentinel has scrolled above the viewport => hero is fully passed.
+          pastHero = entry.boundingClientRect.top < 0;
+          updateStickyBar();
+        },
+        { threshold: 0 }
+      );
+      heroObserver.observe(heroSentinel);
+
+      const pricingObserver = new IntersectionObserver(
+        ([entry]) => {
+          atPricing = entry.isIntersecting;
+          updateStickyBar();
+        },
+        { threshold: 0, rootMargin: '-10% 0px 0px 0px' }
+      );
+      pricingObserver.observe(pricingSection);
+    }
+  </script>
 </Layout>
