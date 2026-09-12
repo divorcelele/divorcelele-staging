@@ -113,7 +113,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
         <button
           onClick={handleLogout}
-          className="w-full py-2.5 px-4 bg-transparent text-[#21242C] text-[14.5px] font-medium border border-[#21242C] rounded-md hover:bg-[#21242C] hover:text-[#EAE4D6] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]"
+          className="w-full py-2.5 px-4 bg-transparent text-[#21242C] text-[14.5px] font-medium border border-[#21242C] rounded-md hover:bg-[#21242C] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C]"
         >
           Sign out
         </button>
@@ -152,7 +152,7 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
 
           <button
             onClick={handleSendOtp}
-            className="w-full py-3 px-4 bg-[#21242C] text-[#EAE4D6] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
+            className="w-full py-3 px-4 bg-[#21242C] text-[#FBF9F4] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
           >
             Continue
           </button>
@@ -176,17 +176,17 @@ export default function AuthWidget({ returnUrl }: { returnUrl: string }) {
               placeholder="000000"
               disabled={isVerifying}
               maxLength={6}
-              className="w-full px-4 py-3.5 text-xl text-center tracking-[0.4em] font-medium bg-white border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all disabled:bg-[#EAE4D6] disabled:text-[#4A4E58] text-[#21242C] placeholder-[#4A4E58]/30"
+              className="w-full px-4 py-3.5 text-xl text-center tracking-[0.4em] font-medium bg-white border border-[#DBD3C1] rounded-md outline-none focus:border-[#7A2E2E] focus:ring-1 focus:ring-[#7A2E2E] transition-all disabled:bg-[#FBF9F4] disabled:text-[#4A4E58] text-[#21242C] placeholder-[#4A4E58]/30"
             />
           </div>
 
           <button
             onClick={verifyOtp}
             disabled={isVerifying || otp.length < 6}
-            className="w-full py-3 px-4 bg-[#21242C] text-[#EAE4D6] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors disabled:bg-[#DBD3C1] disabled:text-[#4A4E58] flex items-center justify-center min-h-[46px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
+            className="w-full py-3 px-4 bg-[#21242C] text-[#FBF9F4] text-[14.5px] font-medium rounded-md hover:bg-[#4A4E58] transition-colors disabled:bg-[#DBD3C1] disabled:text-[#4A4E58] flex items-center justify-center min-h-[46px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#21242C] shadow-sm"
           >
             {isVerifying ? (
-              <div className="animate-spin h-5 w-5 border-2 border-[#EAE4D6] border-t-transparent rounded-full"></div>
+              <div className="animate-spin h-5 w-5 border-2 border-[#FBF9F4] border-t-transparent rounded-full"></div>
             ) : (
               "Verify code"
             )}
