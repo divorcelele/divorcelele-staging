@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="bg-[#FBF9F4] text-[#21242C] font-sans antialiased min-h-screen selection:bg-[#7A2E2E]/20 relative">
 
     <!-- HERO SECTION -->
-    <section class="pt-24 pb-20 md:pt-32 md:pb-32 px-6 text-center max-w-4xl mx-auto">
+    <section class="pt-24 pb-24 md:pt-36 md:pb-32 px-6 text-center max-w-4xl mx-auto">
       <h1 class="font-serif text-[clamp(2.25rem,5vw,4rem)] font-medium text-[#21242C] mb-6 leading-[1.1] tracking-tight">
         Your strategic advantage in family court
       </h1>
@@ -30,10 +30,10 @@ import Layout from '../layouts/Layout.astro';
     <!-- INVISIBLE SENTINEL TO TRIGGER STICKY CTA -->
     <div id="hero-sentinel" class="w-full h-px invisible" aria-hidden="true"></div>
 
-    <!-- FEATURES SECTION -->
-    <section id="features" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <!-- FEATURES SECTION (Soft off-white card container to separate from hero) -->
+    <section id="features" class="py-24 md:py-32 px-6 bg-white border-y border-[#EBE6DC]">
       <div class="max-w-[1120px] mx-auto">
-        <div class="max-w-[640px] mb-30 mx-auto text-center">
+        <div class="max-w-[640px] mb-20 mx-auto text-center">
           <h2 class="font-serif text-[clamp(1.875rem,4vw,2.5rem)] font-medium text-[#21242C] leading-[1.15] mb-4">
             Strategic tools for complex proceedings
           </h2>
@@ -44,11 +44,11 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <!-- Vault -->
-          <div class="relative bg-white border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
+          <div class="relative bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
             <span class="absolute top-0 left-9 -translate-y-full bg-[#21242C] text-[#FBF9F4] text-[12.5px] font-medium px-3.5 py-1.5 rounded-t-md tracking-wide">
               Evidence
             </span>
-            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-[#FBF9F4] flex items-center justify-center mb-6">
+            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-white flex items-center justify-center mb-6">
               <svg class="w-5 h-5 text-[#7A2E2E]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v2" />
               </svg>
@@ -71,11 +71,11 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- Disclosures -->
-          <div class="relative bg-white border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
+          <div class="relative bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
             <span class="absolute top-0 left-9 -translate-y-full bg-[#21242C] text-[#FBF9F4] text-[12.5px] font-medium px-3.5 py-1.5 rounded-t-md tracking-wide">
               Filings
             </span>
-            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-[#FBF9F4] flex items-center justify-center mb-6">
+            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-white flex items-center justify-center mb-6">
               <svg class="w-5 h-5 text-[#21242C]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
@@ -98,11 +98,11 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- Prep -->
-          <div class="relative bg-white border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
+          <div class="relative bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-9 flex flex-col pt-12 mt-4 lg:mt-0">
             <span class="absolute top-0 left-9 -translate-y-full bg-[#21242C] text-[#FBF9F4] text-[12.5px] font-medium px-3.5 py-1.5 rounded-t-md tracking-wide">
               Strategy
             </span>
-            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-[#FBF9F4] flex items-center justify-center mb-6">
+            <div class="w-11 h-11 rounded border border-[#DBD3C1] bg-white flex items-center justify-center mb-6">
               <svg class="w-5 h-5 text-[#21242C]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="8" />
                 <circle cx="12" cy="12" r="4" />
@@ -130,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- VIDEO DEMO SECTION -->
-    <section class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <section class="py-24 md:py-32 px-6 bg-[#FBF9F4]">
       <div class="max-w-[1000px] mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-4">
@@ -159,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- USER TESTIMONIALS SECTION -->
-    <section id="reviews" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <section id="reviews" class="py-24 md:py-32 px-6 bg-white border-y border-[#EBE6DC]">
       <div class="max-w-[1120px] mx-auto">
         <div class="max-w-[640px] mb-16 mx-auto text-center">
           <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-4">
@@ -171,7 +171,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "I was paying my lawyer a fortune just to read through toxic WhatsApp chats. The assistant categorized everything into neat annexures in seconds. Paid for itself instantly."
             </p>
@@ -181,7 +181,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "The mock cross-examination tool helped me stay calm. Practicing the hostile questions privately meant I didn't lose my temper in actual mediation."
             </p>
@@ -191,7 +191,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "Formatting my financial affidavit accurately felt impossible until I used this. It perfectly matched the Supreme Court templates my lawyer required."
             </p>
@@ -201,7 +201,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "I had documents scattered across emails, PDFs, and messages. Having everything organized in one place made preparing for my hearing much less overwhelming."
             </p>
@@ -211,7 +211,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "The timeline feature saved me hours. I could finally see the important events in order instead of digging through months of messages and documents."
             </p>
@@ -221,7 +221,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="bg-white p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
+          <div class="bg-[#FBF9F4] p-8 rounded-md border border-[#DBD3C1] flex flex-col justify-between shadow-sm">
             <p class="text-[#4A4E58] text-[15px] leading-relaxed mb-8 italic">
               "I didn't know where to start with all the paperwork. The assistant broke everything down into manageable steps and helped me prepare questions for my lawyer."
             </p>
@@ -235,7 +235,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- LAWYER TESTIMONIALS SECTION -->
-    <section id="lawyer-reviews" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <section id="lawyer-reviews" class="py-24 md:py-32 px-6 bg-[#FBF9F4]">
       <div class="max-w-[1200px] mx-auto">
         <div class="max-w-[640px] mb-16 mx-auto text-center">
           <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-4">
@@ -316,7 +316,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <section id="faq" class="py-24 md:py-32 px-6 bg-white border-y border-[#EBE6DC]">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-14">
           <h2 class="font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium text-[#21242C] mb-3">
@@ -328,7 +328,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <div class="space-y-4">
-          <details class="group bg-white p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+          <details class="group bg-[#FBF9F4] p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
             <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
               <span>Is my case data and evidence kept private?</span>
               <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
@@ -340,7 +340,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </details>
 
-          <details class="group bg-white p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+          <details class="group bg-[#FBF9F4] p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
             <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
               <span>Will this replace my lawyer?</span>
               <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
@@ -352,7 +352,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </details>
 
-          <details class="group bg-white p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
+          <details class="group bg-[#FBF9F4] p-6 md:p-8 rounded-md border border-[#DBD3C1] cursor-pointer [&_summary::-webkit-details-marker]:hidden shadow-sm">
             <summary class="flex justify-between items-center font-medium text-[#21242C] text-[16px]">
               <span>Is the formatted evidence accepted in court?</span>
               <span class="transition duration-300 group-open:-rotate-180 text-[#7A2E2E]">
@@ -368,7 +368,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- STREAMLINED PRICING SECTION -->
-    <section id="pricing" class="py-24 md:py-32 px-6 border-t border-[#DBD3C1] bg-[#FBF9F4]">
+    <section id="pricing" class="py-24 md:py-32 px-6 bg-[#FBF9F4]">
       <div class="max-w-[1120px] mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-14">
           <h2 class="font-serif text-[clamp(1.875rem,4vw,2.5rem)] font-medium text-[#21242C] mb-4">
@@ -382,7 +382,7 @@ import Layout from '../layouts/Layout.astro';
        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center max-w-4xl mx-auto mb-12">
           
           <!-- Free -->
-          <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 text-center shadow-sm h-full flex flex-col justify-center">
+          <div class="bg-white border border-[#DBD3C1] rounded-md p-8 text-center shadow-sm h-full flex flex-col justify-center">
             <h3 class="font-serif text-xl text-[#21242C] mb-4">Free</h3>
             <div class="flex items-baseline justify-center gap-1 mb-2">
               <span class="text-[16px] font-medium text-[#21242C]">₹</span>
@@ -409,7 +409,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- Trial Suite -->
-          <div class="bg-[#FBF9F4] border border-[#DBD3C1] rounded-md p-8 text-center shadow-sm h-full flex flex-col justify-center">
+          <div class="bg-white border border-[#DBD3C1] rounded-md p-8 text-center shadow-sm h-full flex flex-col justify-center">
             <h3 class="font-serif text-xl text-[#21242C] mb-4">Trial Suite</h3>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="text-[16px] font-medium text-[#21242C]">₹</span>
@@ -470,7 +470,6 @@ import Layout from '../layouts/Layout.astro';
 
       if (!stickyCta || !sentinel || !pricingSection) return;
 
-      // Prevent the load "blink" by adding animations only after initial render
       setTimeout(() => {
         stickyCta.classList.add('transition-transform', 'duration-300', 'ease-in-out');
       }, 100);
@@ -501,6 +500,7 @@ import Layout from '../layouts/Layout.astro';
           isReachedPricing = entry.boundingClientRect.top < 0;
         }
         
+        updateCTASubscription(); // or updateCTAVisibility
         updateCTAVisibility();
       });
 
@@ -508,6 +508,4 @@ import Layout from '../layouts/Layout.astro';
       pricingObserver.observe(pricingSection);
     });
   </script>
-
-
 </Layout>
